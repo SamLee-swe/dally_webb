@@ -1,33 +1,14 @@
 import Image from "next/image";
 import styled from "styled-components";
 
-const Images = styled(Image)`
-  width: 100%;
-  max-width: 552px;
-  height: auto;
-  position: absolute;
-  right: 10rem;
-  z-index: 999;
-
-  @media (max-width: 768px) {
-    max-width: 300px;
-    right: -10px;
-  }
-`;
 export default function attorneyBanner(props) {
   return (
-    <Container>
+    <Container top={props.top} mobileTop={props.mobileTop}>
       <Title>
         <h1>{props.name}</h1>
         <h2>ATTORNEY & COUNSELOR AT LAW</h2>
       </Title>
-      <Images
-        src={props.src}
-        alt={props.alt}
-        style={{
-          top: `${props.top}`,
-        }}
-      />
+      <Image className="attorney-banner-img" src={props.src} alt={props.alt} />
 
       <Contact>
         <h4>817-409-1136</h4>
@@ -41,9 +22,22 @@ const Container = styled.div`
   height: 400px;
   position: relative;
   background-color: #272d47;
-
+  .attorney-banner-img {
+    width: 100%;
+    max-width: 552px;
+    height: auto;
+    position: absolute;
+    right: 10rem;
+    z-index: 999;
+    top: ${(props) => (props.top ? props.top : "-18px")};
+  }
   @media (max-width: 768px) {
-    height: 300px;
+    height: 200px;
+    .attorney-banner-img {
+      max-width: 250px;
+      right: -2rem;
+      top: ${(props) => (props.mobileTop ? props.mobileTop : "11px")};
+    }
   }
 `;
 
@@ -51,6 +45,7 @@ const Title = styled.div`
   position: absolute;
   top: 6rem;
   left: 18rem;
+
   & h1 {
     font-size: 3rem;
     color: #ffffff;
@@ -66,9 +61,21 @@ const Title = styled.div`
   }
 
   @media (max-width: 768px) {
-    left: 50px;
+    left: 6px;
+    top: 3rem;
     font-size: 12px;
     padding: 0.5rem 1rem;
+    & h1 {
+      font-size: 1.2rem;
+      letter-spacing: 5px;
+      border-bottom: 1px solid #67318d;
+      padding-bottom: 0.5rem;
+    }
+    & h2 {
+      font-size: 0.6rem;
+      letter-spacing: 2px;
+      margin-top: 0.5rem;
+    }
   }
 `;
 const Contact = styled.div`
@@ -83,5 +90,14 @@ const Contact = styled.div`
     font-size: 1.1rem;
     letter-spacing: 4px;
     margin: 0.5rem 0 0.5rem 17rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.2rem;
+    & h4 {
+      font-size: 0.4rem;
+      letter-spacing: 2px;
+      margin: 0.5rem 0 0.5rem 1rem;
+    }
   }
 `;

@@ -2,18 +2,17 @@ import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
 import AttorneyBanner from "@/components/UI/banner/attorney-banner/attorneyBanner";
-import DallyBannerImg from "../../../../public/images/Dally_Banner.png";
+import banner from "../../../../public/images/Dally_Banner.png";
 import profile from "../../../../public/images/Dally_profile.png";
 
 export default function Dally() {
   return (
     <Container>
       <AttorneyBanner
-        src={DallyBannerImg}
+        src={banner}
         alt="mally banner image"
         name={"LORI E. DALLY"}
         email={"LORI@TEXFAMILYLAWYER.COM"}
-        top={"-18px"}
       />
       <div className="center-wrapper">
         <Content className="item">
