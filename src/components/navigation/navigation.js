@@ -1,28 +1,31 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import logo from "../../../public/images/banner_logo.png";
 import phone from "../../../public/images/phone.png";
 
 export default function Navigation() {
+  const router = useRouter();
   const [isMobile, setIsMobile] = useState(false);
 
   return (
     <Nav>
-      <Link href={"/"}>
-        <Image
-          src={logo}
-          alt="banner logo"
-          width={478}
-          height={74}
-          className="logo"
-          style={{
-            width: "100%",
-            height: "auto",
-          }}
-        />
-      </Link>
+      <Image
+        src={logo}
+        alt="banner logo"
+        width={478}
+        height={74}
+        className="logo"
+        style={{
+          height: "auto",
+          cursor: "pointer",
+        }}
+        onClick={() => {
+          router.push("/");
+        }}
+      />
 
       <ul>
         <Link href={"/attorneys"} className="link">
@@ -38,20 +41,16 @@ export default function Navigation() {
           <li>CONTACT US</li>
         </Link>
       </ul>
-      <button>
-        <Image
-          src={phone}
-          alt="phone"
-          width={261}
-          height={47}
-          size="100vw"
-          className="phoneLogo"
-          style={{
-            width: "100%",
-            height: "auto",
-          }}
-        />
-      </button>
+      <Image
+        src={phone}
+        alt="phone"
+        width={261}
+        height={45}
+        className="phoneLogo"
+        style={{
+          height: "auto",
+        }}
+      />
     </Nav>
   );
 }
@@ -63,7 +62,7 @@ const Nav = styled.nav`
   left: 0;
   z-index: 100;
   background-color: #ffffff;
-  padding: 3rem 2rem 1rem 3rem;
+  padding: 3rem 2rem 2rem 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -83,14 +82,13 @@ const Nav = styled.nav`
     color: black;
   }
 
-  & button {
+  .phoneLogo {
     position: absolute;
     top: 0;
     right: 80px;
-    border: none;
     cursor: pointer;
     z-index: 9999;
-    margin-top: -8px;
+    margin-top: -9px;
   }
 
   @media (max-width: 768px) {
@@ -102,11 +100,10 @@ const Nav = styled.nav`
       max-width: 200px;
       margin: -2rem 0 0 -8px;
     }
-    & button {
-      margin: -2px 0 0;
-    }
+
     .phoneLogo {
       max-width: 120px;
+      margin-top: -2px;
     }
   }
 `;

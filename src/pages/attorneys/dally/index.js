@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
-import AttorneyBanner from "@/components/UI/banner/attorney-banner/attorneyBanner";
+import AttorneyBanner from "@/components/UI/attorney-banner/attorneyBanner";
 import banner from "../../../../public/images/Dally_Banner.png";
 import profile from "../../../../public/images/Dally_profile.png";
 
@@ -108,6 +108,7 @@ export default function Dally() {
           src={profile}
           alt="Dally profile picture"
           className="item"
+          quality={100}
           style={{
             height: "auto",
             maxHeight: "472px",

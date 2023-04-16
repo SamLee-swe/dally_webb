@@ -13,6 +13,7 @@ export default function Home() {
         size="100vw"
         width={700}
         height={475}
+        quality={100}
         style={{
           margin: "-2px auto",
           width: "100%",
