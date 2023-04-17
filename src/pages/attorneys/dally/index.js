@@ -13,6 +13,7 @@ export default function Dally() {
         alt="mally banner image"
         name={"LORI E. DALLY"}
         email={"LORI@TEXFAMILYLAWYER.COM"}
+        priority={true}
       />
       <div className="center-wrapper">
         <Content className="item">
@@ -115,6 +116,7 @@ export default function Dally() {
             width: "100%",
             maxWidth: "418px",
           }}
+          priority={true}
         />
       </div>
     </Container>

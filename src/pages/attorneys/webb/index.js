@@ -13,6 +13,7 @@ export default function Webb() {
         alt="Webb banner image"
         name={"DANIEL P. WEBB"}
         email={"DANIEL@TEXFAMILYLAWYER.COM"}
+        priority={true}
       />
       <div className="center-wrapper">
         <Content className="item">
@@ -145,6 +146,7 @@ export default function Webb() {
             width: "100%",
             maxWidth: "418px",
           }}
+          priority={true}
         />
       </div>
     </Container>

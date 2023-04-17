@@ -19,7 +19,9 @@ export default function Footer() {
       />
       <Wapper>
         <div className="inside-wrapper">
-          <h5>FORT WORTH OFFICE</h5>
+          <Link href="/contact-us">
+            <h5>FORT WORTH OFFICE</h5>
+          </Link>
           <span />
           <p>
             2813 S. Hulen Street, Suite 250
@@ -31,7 +33,9 @@ export default function Footer() {
           <p className="italic">*Principal Office</p>
         </div>
         <div className="inside-wrapper">
-          <h5>GRANBURY OFFICE</h5>
+          <Link href="/contact-us">
+            <h5>GRANBURY OFFICE</h5>
+          </Link>
           <span />
           <p>
             106 S. Jones St. <br />
@@ -42,7 +46,9 @@ export default function Footer() {
           </p>
         </div>
         <div className="inside-wrapper">
-          <h5>ATTORNEYS</h5>
+          <Link href="/attorneys">
+            <h5>ATTORNEYS</h5>
+          </Link>
           <span />
           <ul>
             <li>

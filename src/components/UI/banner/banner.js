@@ -31,7 +31,7 @@ const Title = styled.h2`
   bottom: 5px;
   left: 370px;
   width: fit-content;
-  background-color: rgba(83, 53, 117, 0.8);
+  background-color: rgba(103, 49, 141, 0.7);
   padding: 1rem 3rem;
   letter-spacing: 6px;
 

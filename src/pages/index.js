@@ -3,8 +3,10 @@ import styled from "styled-components";
 import mainPic from "../../public/images/Main_content_area.png";
 import PracticeAreas from "@/components/main/practice-areas/practiceAreas";
 import WhyChooseUs from "@/components/main/why-choose-us/whyChooseUs";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <Container>
       <Image
@@ -14,6 +16,7 @@ export default function Home() {
         width={700}
         height={475}
         quality={100}
+        priority={true}
         style={{
           margin: "-2px auto",
           width: "100%",
@@ -23,7 +26,9 @@ export default function Home() {
       />
       <ConsultationButtonBox>
         <h1>OFFICES IN FORT WORTH AND GRANBURY</h1>
-        <button>BOOK A CONSULTATION</button>
+        <button onClick={() => router.push("/contact-us")}>
+          BOOK A CONSULTATION
+        </button>
       </ConsultationButtonBox>
       <PracticeAreas />
       <WhyChooseUs />

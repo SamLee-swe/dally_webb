@@ -2,12 +2,15 @@ import styled from "styled-components";
 import PhoneIcon from "../../../public/images/phone_icon.png";
 import EmailIcon from "../../../public/images/email_icon.png";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ContactUs() {
   return (
     <Constainer>
       <div className="container">
-        <h1>CONTACT US</h1>
+        <Link href="/contact-us">
+          <h1>CONTACT US</h1>
+        </Link>
         <span />
         <div className="wrapper">
           <ContactForm>

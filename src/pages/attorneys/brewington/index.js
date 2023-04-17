@@ -13,6 +13,7 @@ export default function Brewington() {
         email={"MAX@TEXFAMILYLAWYER.COM"}
         top={"-9px"}
         mobileTop={"15px"}
+        priority={true}
       />
       <div className="center-wrapper">
         <Content className="item">
