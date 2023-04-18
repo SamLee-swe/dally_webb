@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Link from "next/link";
 import Image from "next/image";
 import divorce from "../../../../public/images/divorce.png";
 import childCustody from "../../../../public/images/child_custody.png";
@@ -23,7 +24,9 @@ export default function PracticeAreas() {
           your voice is heard. Our priority is always to protect your interests
           and those of your family.
         </p>
-        <button>VIEW ALL AREAS</button>
+        <Link className="button" href="/practice-areas">
+          VIEW ALL AREAS
+        </Link>
       </div>
       <ImageWapper>
         <div>
@@ -37,7 +40,9 @@ export default function PracticeAreas() {
             parties, or asking the Court to make a decision when an agreement
             cannot be reached.
           </p>
-          <button>LEARN MORE</button>
+          <Link className="button" href="/practice-areas/uncontested-divorce">
+            LEARN MORE
+          </Link>
         </div>
         <div>
           <Images src={childCustody} alt="divorce image" />
@@ -49,7 +54,9 @@ export default function PracticeAreas() {
             This means all separated parents share equal rights and duties to
             their children.
           </p>
-          <button>LEARN MORE</button>
+          <Link className="button" href="/practice-areas/child-custody">
+            LEARN MORE
+          </Link>
         </div>
         <div>
           <Images src={modification} alt="divorce image" />
@@ -62,7 +69,9 @@ export default function PracticeAreas() {
             show a material and substantial change in circumstances has occurred
             since the entry of your prior order.
           </p>
-          <button>LEARN MORE</button>
+          <Link className="button" href="/practice-areas/modification">
+            LEARN MORE
+          </Link>
         </div>
       </ImageWapper>
     </MainWrapper>
@@ -105,12 +114,13 @@ const MainWrapper = styled.div`
     font-size: 18px;
   }
 
-  & button {
+  .button {
+    font-size: 14px;
     background-color: transparent;
     letter-spacing: 4px;
     color: #67318d;
     border: 1px solid #67318d;
-    padding: 1rem 1.5rem;
+    padding: 1rem 2rem;
     cursor: pointer;
   }
 
@@ -153,7 +163,7 @@ const ImageWapper = styled.div`
     height: 100%;
   }
 
-  & button {
+  .button {
     margin: 2rem 0 4rem;
   }
   @media (max-width: 768px) {

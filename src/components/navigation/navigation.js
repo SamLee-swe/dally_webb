@@ -48,7 +48,6 @@ export default function Navigation() {
         height={45}
         className="phoneLogo"
         style={{
-          height: "auto",
           width: "auto",
         }}
       />

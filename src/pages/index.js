@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import styled from "styled-components";
 import mainPic from "../../public/images/Main_content_area.png";
 import PracticeAreas from "@/components/main/practice-areas/practiceAreas";
