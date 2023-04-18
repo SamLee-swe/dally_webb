@@ -1,56 +1,173 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function PracticeAreaList() {
+  const [activeLink, setActiveLink] = useState(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    const path = router.pathname;
+    const links = document.querySelectorAll("a");
+
+    for (let i = 0; i < links.length; i++) {
+      const href = links[i].getAttribute("href");
+      if (href == path) {
+        setActiveLink(links[i].getAttribute("href"));
+        break;
+      }
+    }
+  }, [router.pathname]);
+
   return (
     <Container>
       <span />
       <ul>
-        <Link href="/practice-areas/divorce">
-          <li>UNCONTESTED DIVORCE</li>
+        <Link href="/practice-areas/uncontested-divorce">
+          <li
+            className={
+              activeLink === "/practice-areas/uncontested-divorce"
+                ? "active"
+                : ""
+            }
+          >
+            UNCONTESTED DIVORCE
+          </li>
         </Link>
-        <Link href="/practice-areas/divorce">
-          <li>CONTESTED DIVORCE</li>
+        <Link href="/practice-areas/contested-divorce">
+          <li
+            className={
+              activeLink === "/practice-areas/contested-divorce" ? "active" : ""
+            }
+          >
+            CONTESTED DIVORCE
+          </li>
         </Link>
         <Link href="/practice-areas/collaborative-divorce">
-          <li>COLLABORATIVE DIVORCE</li>
+          <li
+            className={
+              activeLink === "/practice-areas/collaborative-divorce"
+                ? "active"
+                : ""
+            }
+          >
+            COLLABORATIVE DIVORCE
+          </li>
         </Link>
         <Link href="/practice-areas/same-sex-divorce">
-          <li>SAME-SEX DIVORCE</li>
+          <li
+            className={
+              activeLink === "/practice-areas/same-sex-divorce" ? "active" : ""
+            }
+          >
+            SAME-SEX DIVORCE
+          </li>
         </Link>
         <Link href="/practice-areas/military-divorce">
-          <li>MILITARY DIVORCE</li>
+          <li
+            className={
+              activeLink === "/practice-areas/military-divorce" ? "active" : ""
+            }
+          >
+            MILITARY DIVORCE
+          </li>
         </Link>
         <Link href="/practice-areas/child-custody">
-          <li>CHILD CUSTODY</li>
+          <li
+            className={
+              activeLink === "/practice-areas/child-custody" ? "active" : ""
+            }
+          >
+            CHILD CUSTODY
+          </li>
         </Link>
         <Link href="/practice-areas/child-support">
-          <li>CHILD SUPPORT</li>
+          <li
+            className={
+              activeLink === "/practice-areas/child-support" ? "active" : ""
+            }
+          >
+            CHILD SUPPORT
+          </li>
         </Link>
         <Link href="/practice-areas/modification">
-          <li>MODIFYING CUSTODY OR CHILD SUPPORT</li>
+          <li
+            className={
+              activeLink === "/practice-areas/modification" ? "active" : ""
+            }
+          >
+            MODIFYING CUSTODY OR CHILD SUPPORT
+          </li>
         </Link>
         <Link href="/practice-areas/grandparent-rights">
-          <li>GRANDPARENT RIGHTS</li>
+          <li
+            className={
+              activeLink === "/practice-areas/grandparent-rights"
+                ? "active"
+                : ""
+            }
+          >
+            GRANDPARENT RIGHTS
+          </li>
         </Link>
         <Link href="/practice-areas/paternity">
-          <li>PATERNITY</li>
+          <li
+            className={
+              activeLink === "/practice-areas/paternity" ? "active" : ""
+            }
+          >
+            PATERNITY
+          </li>
         </Link>
         <Link href="/practice-areas/adoption">
-          <li>ADOPTION</li>
+          <li
+            className={
+              activeLink === "/practice-areas/adoption" ? "active" : ""
+            }
+          >
+            ADOPTION
+          </li>
         </Link>
         <Link href="/practice-areas/protective-orders">
-          <li>PROTECTIVE ORDERS</li>
+          <li
+            className={
+              activeLink === "/practice-areas/protective-orders" ? "active" : ""
+            }
+          >
+            PROTECTIVE ORDERS
+          </li>
         </Link>
         <Link href="/practice-areas/mediation">
-          <li>MEDIATION</li>
+          <li
+            className={
+              activeLink === "/practice-areas/mediation" ? "active" : ""
+            }
+          >
+            MEDIATION
+          </li>
         </Link>
         <Link href="/practice-areas/child-protective-services">
-          <li>CHILD PROTECTIVE SERVICES (CPS)</li>
+          <li
+            className={
+              activeLink === "/practice-areas/child-protective-services"
+                ? "active"
+                : ""
+            }
+          >
+            CHILD PROTECTIVE SERVICES (CPS)
+          </li>
         </Link>
         <Link href="/practice-areas/termination-of-parental-rights">
-          <li>TERMINATION OF PARENTAL RIGHTS</li>
+          <li
+            className={
+              activeLink === "/practice-areas/termination-of-parental-rights"
+                ? "active"
+                : ""
+            }
+          >
+            TERMINATION OF PARENTAL RIGHTS
+          </li>
         </Link>
       </ul>
     </Container>
@@ -80,5 +197,9 @@ const Container = styled.div`
     :hover {
       color: #67318d;
     }
+  }
+  .active {
+    color: #67318d;
+    font-weight: 600;
   }
 `;

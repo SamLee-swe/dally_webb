@@ -1,7 +1,21 @@
 import Image from "next/image";
 import styled from "styled-components";
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 export default function Banner(props) {
+  const router = useRouter();
+  const [active, setActive] = useState(false);
+  console.log(router.pathname);
+
+  useEffect(() => {
+    if (router.pathname === "/contact-us") {
+      return setActive(true);
+    } else {
+      return setActive(false);
+    }
+  }, [router.pathname]);
+
   return (
     <Container>
       <Image
@@ -16,20 +30,31 @@ export default function Banner(props) {
           margin: `${(props) => props.margin}`,
         }}
       />
-      <Title>{props.title}</Title>
+      <span className={active ? "active" : ""} />
+      <Title left={props.left}>{props.title}</Title>
     </Container>
   );
 }
 const Container = styled.div`
   width: 100%;
   position: relative;
+  & span {
+  }
+  .active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 99%;
+    background-color: #272d47;
+    opacity: 0.8;
+  }
 `;
-
 const Title = styled.h2`
   position: absolute;
   color: #ffffff;
-  bottom: 5px;
-  left: 370px;
+  bottom: 3px;
+  left: ${(props) => props.left};
   width: fit-content;
   background-color: rgba(103, 49, 141, 0.7);
   padding: 1rem 3rem;

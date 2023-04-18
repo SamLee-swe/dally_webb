@@ -44,6 +44,7 @@ export default function ContactUs() {
               width={15}
               height={15}
               style={{
+                width: "auto",
                 height: "auto",
                 marginRight: "2rem",
               }}
@@ -56,11 +57,12 @@ export default function ContactUs() {
               width={15}
               height={15}
               style={{
+                width: "auto",
                 height: "auto",
                 marginRight: "2rem",
               }}
             />
-            <h3>FORT WORTH - 817-409-1136</h3>
+            <h3>GRANBURY - 817-408-3541</h3>
             <br />
 
             <Image
@@ -69,6 +71,7 @@ export default function ContactUs() {
               width={23}
               height={23}
               style={{
+                width: "auto",
                 height: "auto",
                 marginRight: "1.5rem",
               }}

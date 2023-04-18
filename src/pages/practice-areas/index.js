@@ -12,6 +12,7 @@ export default function PracticeAreas() {
         src={bannerImage}
         alt={"practice-areas landing page banner image"}
         title="PRACTICE AREAS"
+        left="310px"
       />
       <Container>
         <div className="wrapper">

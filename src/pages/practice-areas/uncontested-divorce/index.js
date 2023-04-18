@@ -1,11 +1,10 @@
 import styled from "styled-components";
-import Link from "next/link";
 import Banner from "@/components/UI/banner/banner";
-import bannerImage from "../../../../public/images/child-banner.png";
+import bannerImage from "../../../../public/images/divorce-page.png";
 import WhyChooseUs from "@/components/main/why-choose-us/whyChooseUs";
 import PraceticeAreaList from "@/components/practice-area-list/practiceAreaList";
 
-export default function ChildCustody() {
+export default function UncontestedDivorce() {
   return (
     <>
       <Banner
@@ -18,35 +17,43 @@ export default function ChildCustody() {
         <div className="wrapper">
           <PraceticeAreaList />
           <div>
-            <h2>CHILD CUSTODY</h2>
+            <h2>DIVORCE - UNCONTESTED VS. CONTESTED</h2>
             <p className="text">
-              While most people use the terms “full custody” or “sole custody,”
-              those are not actual legal terms in Texas. There is a presumption
-              that all separated parents shall be named Joint Managing
-              Conservators which means they share equal rights and duties to
-              their children.
+              While we frequently hear the term “uncontested” - there is no
+              distinction in Texas law between contested cases and cases that
+              are resolved through an agreement. All cases, regardless of how
+              contested or amicable, are resolved through the same process of
+              filing a Petition and then either requesting that the Court
+              approve an agreement reached by the parties, or asking the Court
+              to make a decision for the parties when an agreement cannot be
+              reached.
               <br />
               <br />
-              Within that umbrella title, generally one parent will have the
-              exclusive right to determine the child’s primary residence (we
-              refer to this parent as the “Primary Parent”). The child will live
-              primarily with this parent and attend school based upon this
-              parent’s residence. The court will typically limit the area where
-              the child can live which is referred to as a Geographic
-              Restriction. Once a geographic restriction is put into place, they
-              can be very difficult to modify in the future.
+              In order to start the divorce process, one party must file a
+              Petition for Divorce with the court and give the other party
+              notice that this has been done. In an uncontested divorce, the
+              easiest way to do this is for the non-filing party to sign a
+              Waiver of Service. This avoids the cost and embarrassment of
+              having them served by a Process Server.
               <br />
               <br />
-              The other, non-primary parent, will generally have a Standard
-              Possession Schedule with the child, pay child support, and provide
-              monthly health insurance for the child.
+              Generally, you file for divorce in the county in which you
+              currently reside. While there are certain exceptions, you cannot
+              file for divorce in Texas unless you have been living in the state
+              for 6 months and residing in the county in which you intend to
+              file for at least 90 days.
               <br />
               <br />
-              While there are some standard guidelines in place, not all
-              families are the same, and there are ways to come to agreements or
-              have the court make orders that either increase the amount of time
-              a parent has with the children or lessen the amount of time, based
-              on varying circumstances.
+              From there, the parties can work together to reach an agreement
+              dividing their property, debts and securing agreements regarding
+              their children, if they have any. Even if the parties reach an
+              agreement, a divorce cannot be finalized – barring certain unusual
+              circumstances – until the 61st day after the Petition for Divorce
+              has been filed. This is commonly referred to as the &#34;waiting
+              period&#34; as is required as a public policy to ensure parties
+              are not getting divorced without a chance to &#34;cool off&#34;
+              and consider the weight of the decision prior to finalizing their
+              case.
               <br />
               <br />
               Even when parties are amicable or potentially have already come up
