@@ -111,7 +111,6 @@ const InfoBox = styled.div`
   & h3 {
     color: #67318d;
     font-size: 20px;
-    font-weight: 500;
     letter-spacing: 1px;
     line-height: 1.5;
   }
@@ -119,7 +118,6 @@ const InfoBox = styled.div`
     letter-spacing: 3px;
     font-size: 16px;
     margin-top: 3rem;
-    font-weight: 400;
   }
 
   & p {

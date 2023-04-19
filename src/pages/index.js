@@ -1,36 +1,47 @@
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
-import mainPic from "../../public/images/Main_content_area.png";
+import mainPic from "../../public/images/home-main.png";
 import PracticeAreas from "@/components/main/practice-areas/practiceAreas";
 import WhyChooseUs from "@/components/main/why-choose-us/whyChooseUs";
-import { useRouter } from "next/router";
 
 export default function Home() {
-  const router = useRouter();
   return (
     <Container>
-      <Image
-        src={mainPic}
-        alt="main content area image"
-        size="100vw"
-        width={700}
-        height={475}
-        quality={100}
-        priority={true}
-        style={{
-          margin: "-2px auto",
-          width: "100%",
-          height: "auto",
-          position: "relative",
-        }}
-      />
-      <ConsultationButtonBox>
-        <h1>OFFICES IN FORT WORTH AND GRANBURY</h1>
-        <button onClick={() => router.push("/contact-us")}>
-          BOOK A CONSULTATION
-        </button>
-      </ConsultationButtonBox>
+      <ImageContainer>
+        <div className="wrapper">
+          <Image
+            src={mainPic}
+            alt="main content area image"
+            quality={100}
+            priority={true}
+            className="main-image"
+          />
+          <MainText>
+            <p className="main-top-text">DIVORCE</p>
+            <span />
+            <p className="main-top-text">CUSTODY</p>
+            <span />
+            <p className="main-top-text">CHILD SUPPORT</p>
+            <span />
+            <p className="main-text">
+              At Dally & Webb Family Law, PLLC, we are dedicated to providing
+              you with an unparalleled level of legal representation for all
+              your family law needs. Our team of experienced attorneys
+              understands the complexities and sensitivities involved in family
+              law matters, and we are here to guide you through every step of
+              the process.
+            </p>
+          </MainText>
+        </div>
+
+        <ConsultationButtonBox>
+          <p className="location-title">OFFICES IN FORT WORTH AND GRANBURY</p>
+          <Link className="button" href={"/contact-us"}>
+            BOOK A CONSULTATION
+          </Link>
+        </ConsultationButtonBox>
+      </ImageContainer>
       <PracticeAreas />
       <WhyChooseUs />
     </Container>
@@ -41,18 +52,162 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
 `;
+const ImageContainer = styled.div`
+  width: 100%;
+  height: 64vh;
+  position: relative;
+
+  ::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(39, 45, 71, 0.8);
+    z-index: -1;
+  }
+  ::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("/images/main-background.png") no-repeat;
+    object-fit: contain;
+    background-size: 100% 100%;
+    z-index: -2;
+  }
+  .wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .main-image {
+    width: 100%;
+    max-width: 590px;
+    height: auto;
+    margin-top: -1rem;
+  }
+
+  @media (max-width: 1200px) {
+    height: 54vh;
+
+    .main-image {
+      max-width: 523px;
+      margin-top: 0rem;
+    }
+  }
+  @media (max-width: 795px) {
+    height: 34vh;
+    .main-image {
+      max-width: 300px;
+    }
+  }
+  @media (max-width: 523px) {
+    height: 22vh;
+    .main-image {
+      max-width: 200px;
+      margin-top: 2rem;
+    }
+  }
+`;
+
+const MainText = styled.div`
+  max-width: 648px;
+  margin-bottom: 3rem;
+
+  & span {
+    display: block;
+    width: 100%;
+    max-width: 511px;
+    border-top: 2px solid #67318d;
+    margin: 1rem 0;
+  }
+
+  .main-top-text {
+    color: #ffffff;
+    font-size: 40px;
+    letter-spacing: 10px;
+  }
+
+  .main-text {
+    color: #ffffff;
+    font-size: 20px;
+  }
+
+  @media (max-width: 1200px) {
+    margin-bottom: 0;
+    .main-top-text {
+      font-size: 22px;
+      letter-spacing: 6px;
+    }
+    & span {
+      max-width: 300px;
+      margin: 0.3rem 0;
+    }
+    .main-text {
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 795px) {
+    .main-top-text {
+      font-size: 16px;
+      letter-spacing: 4px;
+      line-height: 1.2rem;
+    }
+    & span {
+      max-width: 200px;
+      margin: 0.2rem 0;
+    }
+    .main-text {
+      font-size: 12px;
+      line-height: 1.2rem;
+    }
+  }
+  @media (max-width: 523px) {
+    .main-top-text {
+      font-size: 12px;
+      line-height: 1;
+    }
+    & span {
+      max-width: 150px;
+      margin: 0.1rem 0;
+    }
+    .main-text {
+      font-size: 10px;
+      line-height: 1.2;
+    }
+  }
+  @media (max-width: 341px) {
+    .main-top-text {
+      display: none;
+    }
+    & span {
+      display: none;
+    }
+    .main-text {
+      font-size: 10px;
+      line-height: 1.2;
+    }
+  }
+`;
+
 const ConsultationButtonBox = styled.div`
   background-color: #533575;
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 100px;
-  bottom: 146px;
+  bottom: 0;
   background-color: rgba(83, 53, 117, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
 
-  & h1 {
+  .location-title {
     color: #ffffff;
     font-size: 20px;
     letter-spacing: 6px;
@@ -61,37 +216,50 @@ const ConsultationButtonBox = styled.div`
     opacity: 1;
   }
 
-  & button {
+  .button {
+    font-size: 16px;
     background-color: transparent;
-    letter-spacing: 6px;
+    letter-spacing: 4px;
     color: #ffffff;
     border: 1px solid #ffffff;
-    padding: 1rem 2rem;
-    cursor: pointer;
-  }
-  @media (max-width: 1600px) {
-    & h1 {
-      font-size: 16px;
+    padding: 10px 40px;
+    transition: 0.3s ease-in-out;
+
+    :hover {
+      border: 1px solid #c293ff;
+      color: #c293ff;
     }
   }
-  @media (max-width: 1200px) {
-    justify-content: space-around;
-    flex-direction: column;
-    height: 60px;
-    bottom: 13px;
-    background-color: rgba(83, 53, 117, 1);
 
-    & h1 {
+  @media (max-width: 1200px) {
+    justify-content: space-evenly;
+    bottom: -100px;
+    background-color: #533575;
+    .location-title {
       text-align: center;
-      font-size: 11px;
+      font-size: 16px;
       letter-spacing: 3px;
       margin-right: 0;
     }
-    & button {
-      font-size: 9px;
+    .button {
+      font-size: 12px;
       letter-spacing: 3px;
       padding: 0.2rem 1rem;
       margin-bottom: 10px;
+    }
+  }
+
+  @media (max-width: 795px) {
+    flex-direction: column;
+
+    .location-title {
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+    .button {
+      font-size: 10px;
+      letter-spacing: 2px;
+      padding: 0.1rem 1rem;
     }
   }
 `;

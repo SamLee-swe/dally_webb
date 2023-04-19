@@ -6,7 +6,6 @@ import { useRouter } from "next/router";
 export default function Banner(props) {
   const router = useRouter();
   const [active, setActive] = useState(false);
-  console.log(router.pathname);
 
   useEffect(() => {
     if (router.pathname === "/contact-us") {
@@ -50,15 +49,16 @@ const Container = styled.div`
     opacity: 0.8;
   }
 `;
-const Title = styled.h2`
+const Title = styled.p`
   position: absolute;
   color: #ffffff;
-  bottom: 3px;
+  bottom: 9px;
   left: ${(props) => props.left};
   width: fit-content;
   background-color: rgba(103, 49, 141, 0.7);
   padding: 1rem 3rem;
   letter-spacing: 6px;
+  font-size: 26px;
 
   @media (max-width: 768px) {
     left: 50px;

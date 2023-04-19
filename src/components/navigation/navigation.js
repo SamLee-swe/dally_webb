@@ -4,7 +4,8 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import logo from "../../../public/images/banner_logo.png";
-import phone from "../../../public/images/phone.png";
+import phone from "../../../public/images/phone_icon.png";
+import Hamburger from "../UI/hamburger-menu/hamburger";
 
 export default function Navigation() {
   const router = useRouter();
@@ -27,7 +28,7 @@ export default function Navigation() {
         }}
       />
 
-      <ul>
+      <ul className="nav-menu">
         <Link href={"/attorneys"} className="link">
           <li>ATTORNEYS</li>
         </Link>
@@ -41,16 +42,24 @@ export default function Navigation() {
           <li>CONTACT US</li>
         </Link>
       </ul>
-      <Image
-        src={phone}
-        alt="phone"
-        width={261}
-        height={45}
-        className="phoneLogo"
-        style={{
-          width: "auto",
-        }}
-      />
+      <button className="phoneLogo">
+        <Image
+          src={phone}
+          alt="phone icon"
+          width={15}
+          height={15}
+          style={{
+            height: "auto",
+            position: "relative",
+            top: "3px",
+            marginRight: "1rem",
+          }}
+        />
+        817-409-1136
+      </button>
+      <span className="ham-wrapper">
+        <Hamburger />
+      </span>
     </Nav>
   );
 }
@@ -69,31 +78,52 @@ const Nav = styled.nav`
   & ul {
     & li {
       display: inline-block;
-      margin: 0 3rem;
-      font-size: 1.2rem;
+      padding: 11px 40px;
+
+      font-size: 16px;
       letter-spacing: 1px;
+      transition: 0.5s ease;
+
       :hover {
-        color: #67318d;
+        color: #ffffff;
+        background-color: #67318d;
+        font-weight: 500;
       }
     }
   }
 
   .link {
     color: black;
+    width: fit-content;
   }
 
   .phoneLogo {
+    width: 261px;
+    height: 51px;
+    background-color: #533575;
     position: absolute;
+    border: none;
     top: 0;
     right: 80px;
     cursor: pointer;
     z-index: 9999;
-    margin-top: -9px;
+    font-size: 20px;
+    color: white;
+    letter-spacing: 4px;
+    transition: 0.3s ease-in-out;
+
+    :hover {
+      background-color: #c293ff;
+    }
   }
 
-  @media (max-width: 768px) {
+  .ham-wrapper {
+    display: none;
+  }
+
+  @media (max-width: 1390px) {
     padding: 2.5rem 1rem 1rem 1rem;
-    & ul {
+    .nav-menu {
       display: none;
     }
     .logo {
@@ -102,8 +132,11 @@ const Nav = styled.nav`
     }
 
     .phoneLogo {
-      max-width: 120px;
-      margin-top: -2px;
+      display: none;
+    }
+
+    .ham-wrapper {
+      display: block;
     }
   }
 `;
