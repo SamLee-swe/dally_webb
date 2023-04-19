@@ -63,7 +63,6 @@ const Container = styled.div`
     max-width: 800px;
     letter-spacing: 1px;
     line-height: 1.5rem;
-    font-weight: 300;
   }
 
   @media (max-width: 768px) {
@@ -87,7 +86,6 @@ const NameBox = styled.div`
 
   & h3 {
     color: #808080;
-    font-weight: 500;
     :hover {
       color: #67318d;
     }

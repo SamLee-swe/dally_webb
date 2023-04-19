@@ -71,10 +71,10 @@ function MyComponent() {
             <Marker
               key={office.id}
               position={{ lat: office.lat, lng: office.lng }}
-              onMouseOver={(event) => {
-                mouseHoverHandler(event, office.id);
-              }}
-              onMouseOut={() => mouseHoverOffHandler()}
+              // onMouseOver={(event) => {
+              //   mouseHoverHandler(event, office.id);
+              // }}
+              // onMouseOut={() => mouseHoverOffHandler()}
               scale={{
                 width: isShown & (office?.id == idx) ? 55 : 45,
                 height: isShown & (office?.id == idx) ? 55 : 45,

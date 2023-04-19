@@ -15,7 +15,7 @@ const Images = styled(Image)`
 export default function PracticeAreas() {
   return (
     <MainWrapper>
-      <h1>PRACTICE AREAS</h1>
+      <p className="title">PRACTICE AREAS</p>
       <span />
       <div className="top-div">
         <p className="top-p">
@@ -31,8 +31,8 @@ export default function PracticeAreas() {
       <ImageWapper>
         <div>
           <Images src={divorce} alt="divorce image" />
-          <h3>DIVORCE</h3>
-          <p>
+          <p className="sub-title">DIVORCE</p>
+          <p className="text-area">
             In Texas Law, there is no difference when referring to contested and
             uncontested divorces. Regardless of how agreeable, all cases are
             resolved through the same process of filing a Petition and then
@@ -46,8 +46,8 @@ export default function PracticeAreas() {
         </div>
         <div>
           <Images src={childCustody} alt="divorce image" />
-          <h3>CHILD CUSTODY</h3>
-          <p>
+          <p className="sub-title">CHILD CUSTODY</p>
+          <p className="text-area">
             The often used terms “full custody” or “sole custody” are not actual
             legal terms recognized by the state of Texas. It is presumed that
             all separated parents shall be named Joint Managing Conservators.
@@ -60,8 +60,8 @@ export default function PracticeAreas() {
         </div>
         <div>
           <Images src={modification} alt="divorce image" />
-          <h3>MODIFICATION</h3>
-          <p>
+          <p className="sub-title">MODIFICATION</p>
+          <p className="text-area">
             If you already have a court order in place, you may be able to
             modify it. If the order has become unworkable or you no longer
             believe the order is in your child’s best interest, this may be an
@@ -80,19 +80,17 @@ export default function PracticeAreas() {
 
 const MainWrapper = styled.div`
   width: 100%;
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 8rem;
 
-  & h1 {
+  .title {
     color: #67318d;
+    font-size: 30px;
     letter-spacing: 2px;
     width: fit-content;
-    font-weight: 700;
     border-bottom: 2px solid #67318d;
-    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.2);
     padding-bottom: 1rem;
-    -webkit-text-stroke: 1px black;
   }
   & span {
     display: block;
@@ -110,23 +108,28 @@ const MainWrapper = styled.div`
     width: 70%;
     line-height: 1.8rem;
   }
-  & p {
+  .text-area {
     font-size: 18px;
   }
 
   .button {
-    font-size: 14px;
+    font-size: 16px;
     background-color: transparent;
     letter-spacing: 4px;
     color: #67318d;
     border: 1px solid #67318d;
-    padding: 1rem 2rem;
+    padding: 10px 40px;
     cursor: pointer;
+    :hover {
+      border: 1px solid #c293ff;
+      color: #c293ff;
+    }
   }
 
   @media (max-width: 768px) {
+    margin-top: 6rem;
     padding: 2rem;
-    & h1 {
+    .title {
       font-size: 24px;
     }
     .top-div {
@@ -149,14 +152,15 @@ const ImageWapper = styled.div`
     flex-direction: column;
     align-items: flex-start;
   }
-  & h3 {
-    margin: 2rem 0 1rem;
-    letter-spacing: 3px;
-    color: #67318d;
+  .sub-title {
+    font-size: 20px;
     font-weight: 500;
+    margin: 2rem 0 1rem;
+    letter-spacing: 4px;
+    color: #67318d;
   }
 
-  & p {
+  .text-area {
     font-size: 18px;
     line-height: 1.8rem;
     max-width: 340px;

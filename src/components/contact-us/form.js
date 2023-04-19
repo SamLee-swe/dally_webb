@@ -9,22 +9,32 @@ export default function ContactUs() {
     <Constainer>
       <div className="container">
         <Link href="/contact-us">
-          <h1>CONTACT US</h1>
+          <p className="title">CONTACT US</p>
         </Link>
         <span />
         <div className="wrapper">
           <ContactForm>
-            <input type="text" placeholder="Name*" required />
-            <input type="text" placeholder="Email Address*" required />
-            <input type="text" placeholder="Phone Number*" required />
-            <select placeholder="Office Preference*" required>
+            <input className="one" type="text" placeholder="Name*" required />
+            <input
+              className="two"
+              type="text"
+              placeholder="Email Address*"
+              required
+            />
+            <input
+              className="three"
+              type="text"
+              placeholder="Phone Number*"
+              required
+            />
+            <select className="four" placeholder="Office Preference*" required>
               <option value="" disabled selected>
                 Office Preference*
               </option>
               <option value="Fort Worth">Fort Worth</option>
               <option value="Granbury">Granbury</option>
             </select>
-            <select placeholder="Area of Interest*" required>
+            <select className="five" placeholder="Area of Interest*" required>
               <option value="" disabled selected>
                 Area of Interest*
               </option>
@@ -35,48 +45,51 @@ export default function ContactUs() {
               <option value="Modification">Modification</option>
               <option value="Other">Other</option>
             </select>
-            <button>SUBMIT INFO</button>
+            <button className="six">SUBMIT INFO</button>
           </ContactForm>
           <ContactInfo>
-            <Image
-              src={PhoneIcon}
-              alt="Phone icon"
-              width={15}
-              height={15}
-              style={{
-                width: "auto",
-                height: "auto",
-                marginRight: "2rem",
-              }}
-            />
-            <h3>FORT WORTH - 817-409-1136</h3>
-            <br />
-            <Image
-              src={PhoneIcon}
-              alt="Phone icon"
-              width={15}
-              height={15}
-              style={{
-                width: "auto",
-                height: "auto",
-                marginRight: "2rem",
-              }}
-            />
-            <h3>GRANBURY - 817-408-3541</h3>
-            <br />
+            <div style={{ width: "100%" }}>
+              <Image
+                src={PhoneIcon}
+                alt="Phone icon"
+                width={15}
+                height={15}
+                style={{
+                  height: "auto",
+                  marginRight: "2rem",
+                  display: "inline-block",
+                }}
+              />
+              <p className="office-infos">FORT WORTH - 817-409-1136</p>
+              <br />
+              <Image
+                src={PhoneIcon}
+                alt="Phone icon"
+                width={15}
+                height={15}
+                style={{
+                  height: "auto",
+                  marginRight: "2rem",
+                  display: "inline-block",
+                }}
+              />
+              <p className="office-infos">GRANBURY - 817-408-3541</p>
+              <br />
 
-            <Image
-              src={EmailIcon}
-              alt="Email icon"
-              width={23}
-              height={23}
-              style={{
-                width: "auto",
-                height: "auto",
-                marginRight: "1.5rem",
-              }}
-            />
-            <h3>LORI@TEXFAMILYLAWYER.COM</h3>
+              <Image
+                src={EmailIcon}
+                alt="Email icon"
+                width={23}
+                height={23}
+                style={{
+                  height: "auto",
+                  marginRight: "1.5rem",
+                  display: "inline-block",
+                }}
+              />
+              <p className="office-infos">LORI@TEXFAMILYLAWYER.COM</p>
+            </div>
+
             <p>
               ** We welcome your email, but please understand that if you are
               not already a client of Dally & Webb Family Law, PLLC, we cannot
@@ -113,12 +126,11 @@ const Constainer = styled.div`
     justify-content: space-between;
   }
 
-  & h1 {
+  .title {
     color: #ffffff;
     font-size: 30px;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
     width: fit-content;
-    font-weight: 200;
     border-bottom: 2px solid #ffffff;
     padding-bottom: 1rem;
   }
@@ -131,12 +143,16 @@ const Constainer = styled.div`
   & p {
     color: #ffffff;
     font-size: 12px;
-    line-height: 1.4rem;
     width: 90%;
+    line-height: 1.5;
   }
-
+  @media (max-width: 1200px) {
+    .wrapper {
+      flex-direction: column;
+    }
+  }
   @media (max-width: 768px) {
-    & h1 {
+    .title {
       font-size: 24px;
     }
     .wrapper {
@@ -148,7 +164,7 @@ const Constainer = styled.div`
 
 const ContactForm = styled.form`
   width: 100%;
-  max-width: 450px;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -156,33 +172,51 @@ const ContactForm = styled.form`
   & input,
   select {
     width: 100%;
+    max-width: 490px;
     padding: 1rem;
     margin-bottom: 1rem;
     border: none;
     background-color: #ffffff;
     font-size: 14px;
     letter-spacing: 1px;
+    line-height: 0;
   }
 
   & button {
-    color: #ffffff;
-    display: block;
-    letter-spacing: 4px;
-    padding: 1rem 3rem;
-    margin-top: 1rem;
+    font-size: 16px;
     background-color: transparent;
+    letter-spacing: 4px;
+    color: #ffffff;
     border: 1px solid #ffffff;
-    cursor: pointer;
+    padding: 10px 40px;
+    transition: 0.3s ease-in-out;
+    margin-top: 1rem;
+
+    :hover {
+      border: 1px solid #c293ff;
+      color: #c293ff;
+    }
+  }
+  @media (max-width: 1200px) {
+    max-width: 100%;
+    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    .six {
+      grid-column: 1;
+      grid-row: 4;
+    }
+    & button {
+      font-size: 12px;
+      padding: 0;
+    }
   }
   @media (max-width: 768px) {
     align-items: center;
-    gap: 0.5rem;
-    & input,
-    select {
-      padding: 0.5rem;
-    }
+    display: flex;
+    flex-direction: column;
     & button {
-      padding: 0.5rem 2rem;
+      padding: 5px 20px;
     }
   }
 `;
@@ -191,22 +225,26 @@ const ContactInfo = styled.div`
   width: 100%;
   max-width: 600px;
   padding: 0;
-  & h3 {
+  .office-infos {
     display: inline-block;
     color: #ffffff;
     font-size: 20px;
-    letter-spacing: 5px;
-    margin-bottom: 1rem;
+    letter-spacing: 4px;
+    margin: 0.5rem 0 1rem 0;
+    vertical-align: middle;
   }
   & p {
     margin-top: 2rem;
   }
-
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     margin-top: 3rem;
-    & h3 {
-      font-size: 16px;
-      letter-spacing: 2px;
+    max-width: 100%;
+    .office-infos {
+      margin: 0;
+      font-size: 12px;
     }
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
   }
 `;

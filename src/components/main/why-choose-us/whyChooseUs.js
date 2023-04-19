@@ -4,7 +4,7 @@ export default function WhyChooseUs() {
   return (
     <Constainer>
       <div>
-        <h1>WHY CHOOSE US</h1>
+        <p className="title">WHY CHOOSE US</p>
         <span />
         <p>
           We understand the importance of effective communication, and we are
@@ -31,13 +31,12 @@ const Constainer = styled.div`
     margin: 0 auto;
     padding: 5rem 2rem;
   }
-  & h1 {
-    color: #533575;
+  .title {
+    color: #67318d;
     font-size: 30px;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
     width: fit-content;
-    font-weight: 200;
-    border-bottom: 2px solid #533575;
+    border-bottom: 2px solid #67318d;
     padding-bottom: 1rem;
   }
   & span {
@@ -47,14 +46,13 @@ const Constainer = styled.div`
   }
 
   & p {
-    font-size: 20px;
+    font-size: 22px;
     line-height: 1.8rem;
-    letter-spacing: 1px;
     width: 90%;
   }
 
   @media (max-width: 768px) {
-    & h1 {
+    .title {
       font-size: 24px;
     }
     & p {

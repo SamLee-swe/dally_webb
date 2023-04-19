@@ -191,7 +191,6 @@ const Container = styled.div`
 
   & li {
     color: #808080;
-    font-weight: 400;
     padding: 12px 0;
     cursor: pointer;
     :hover {
@@ -200,6 +199,5 @@ const Container = styled.div`
   }
   .active {
     color: #67318d;
-    font-weight: 600;
   }
 `;

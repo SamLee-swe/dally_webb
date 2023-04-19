@@ -113,7 +113,6 @@ const Container = styled.div`
     & h3 {
       color: #67318d;
       font-size: 20px;
-      font-weight: 500;
       letter-spacing: 1px;
       line-height: 1.5;
       margin-top: 1rem;

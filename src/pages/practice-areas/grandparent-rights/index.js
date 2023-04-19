@@ -66,7 +66,6 @@ const Container = styled.div`
     justify-content: space-between;
   }
   & h2 {
-    font-weight: 400;
     width: fit-content;
     margin-bottom: 2rem;
     letter-spacing: 4px;
@@ -79,7 +78,6 @@ const Container = styled.div`
     max-width: 760px;
     letter-spacing: 1px;
     line-height: 1.5rem;
-    font-weight: 300;
   }
 
   @media (max-width: 768px) {

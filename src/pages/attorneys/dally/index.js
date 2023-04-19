@@ -150,7 +150,6 @@ const Content = styled.div`
   width: 100%;
   max-width: 800px;
   & b {
-    font-weight: 600;
   }
   & p {
     font-size: 15px;
