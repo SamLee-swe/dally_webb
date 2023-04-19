@@ -54,7 +54,7 @@ const Container = styled.div`
 `;
 const ImageContainer = styled.div`
   width: 100%;
-  height: 64vh;
+  height: 648px;
   position: relative;
 
   ::before {
@@ -82,6 +82,8 @@ const ImageContainer = styled.div`
   .wrapper {
     width: 100%;
     height: 100%;
+    position: absolute;
+    bottom: 0;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -90,33 +92,33 @@ const ImageContainer = styled.div`
     width: 100%;
     max-width: 590px;
     height: auto;
-    margin-top: -1rem;
   }
 
   @media (max-width: 1200px) {
-    height: 54vh;
-
+    height: 540px;
     .main-image {
-      max-width: 523px;
-      margin-top: 0rem;
+      max-width: 400px;
+      margin-top: 6rem;
     }
   }
   @media (max-width: 795px) {
-    height: 34vh;
+    height: 400px;
     .main-image {
       max-width: 300px;
+      margin-top: 4rem;
     }
   }
-  @media (max-width: 523px) {
-    height: 22vh;
+  @media (max-width: 478px) {
+    height: 260px;
     .main-image {
       max-width: 200px;
-      margin-top: 2rem;
+      margin-top: 3rem;
     }
   }
 `;
 
 const MainText = styled.div`
+  width: 100%;
   max-width: 648px;
   margin-bottom: 3rem;
 
@@ -168,7 +170,7 @@ const MainText = styled.div`
       line-height: 1.2rem;
     }
   }
-  @media (max-width: 523px) {
+  @media (max-width: 478px) {
     .main-top-text {
       font-size: 12px;
       line-height: 1;
@@ -176,18 +178,6 @@ const MainText = styled.div`
     & span {
       max-width: 150px;
       margin: 0.1rem 0;
-    }
-    .main-text {
-      font-size: 10px;
-      line-height: 1.2;
-    }
-  }
-  @media (max-width: 341px) {
-    .main-top-text {
-      display: none;
-    }
-    & span {
-      display: none;
     }
     .main-text {
       font-size: 10px;
