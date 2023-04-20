@@ -52,7 +52,7 @@ const Container = styled.div`
 const Title = styled.p`
   position: absolute;
   bottom: 9px;
-  left: ${(props) => (props.left ? props.left : "80px")};
+  left: ${(props) => (props.left ? props.left : "200px")};
   width: fit-content;
   background-color: rgba(103, 49, 141, 0.7);
   padding: 1rem 3rem;

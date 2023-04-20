@@ -12,7 +12,7 @@ export default function AboutUs() {
         src={bannerImage}
         alt={"about-us landing page banner image"}
         title="ABOUT US"
-        left="70px"
+        left="150px"
       />
       <Container>
         <div className="center-wrapper">
