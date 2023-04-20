@@ -12,12 +12,12 @@ export default function PracticeAreas() {
         src={bannerImage}
         alt={"practice-areas landing page banner image"}
         title="PRACTICE AREAS"
-        left="310px"
+        left="75px"
       />
       <Container>
         <div className="wrapper">
           <PraceticeAreaList />
-          <p className="text">
+          <p className="body-copy">
             Family law is one of the most personal areas of the law to be
             involved in, whether you are getting a divorce, seeking custody of a
             child, adopting a child, or needing a modification. That is why it
@@ -40,7 +40,6 @@ export default function PracticeAreas() {
             your most precious assets.
           </p>
         </div>
-        <WhyChooseUs />
       </Container>
     </>
   );
@@ -54,19 +53,16 @@ const Container = styled.div`
     width: 100%;
     max-width: 1320px;
     margin: 0 auto;
-    padding: 6rem;
+    padding: 4rem;
     display: flex;
     justify-content: space-between;
   }
 
-  .text {
-    font-size: 17px;
+  .body-copy {
     max-width: 760px;
-    letter-spacing: 1px;
-    line-height: 1.5rem;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1068px) {
     .wrapper {
       flex-direction: column;
       align-items: center;

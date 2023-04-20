@@ -182,16 +182,17 @@ const ContactForm = styled.form`
     line-height: 0;
   }
 
-  & button {
-    font-size: 16px;
-    background-color: transparent;
-    letter-spacing: 4px;
+  .six {
     color: #ffffff;
     border: 1px solid #ffffff;
-    padding: 10px 40px;
     transition: 0.3s ease-in-out;
+    font-size: 16px;
+    background-color: transparent;
+    font-weight: 500;
+    padding: 10px 40px;
+    letter-spacing: 0.25em;
     margin-top: 1rem;
-
+    cursor: pointer;
     :hover {
       border: 1px solid #c293ff;
       color: #c293ff;
@@ -206,7 +207,7 @@ const ContactForm = styled.form`
       grid-column: 1;
       grid-row: 4;
     }
-    & button {
+    .six {
       font-size: 12px;
       padding: 0;
     }
@@ -215,7 +216,7 @@ const ContactForm = styled.form`
     align-items: center;
     display: flex;
     flex-direction: column;
-    & button {
+    .six {
       padding: 5px 20px;
     }
   }

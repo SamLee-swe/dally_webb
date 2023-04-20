@@ -79,7 +79,7 @@ const Nav = styled.nav`
     & li {
       display: inline-block;
       padding: 11px 40px;
-
+      font-style: normal;
       font-size: 16px;
       letter-spacing: 1px;
       transition: 0.5s ease;
@@ -98,6 +98,8 @@ const Nav = styled.nav`
   }
 
   .phoneLogo {
+    font-family: "Montserrat";
+    font-style: normal;
     width: 261px;
     height: 51px;
     background-color: #533575;
@@ -107,7 +109,7 @@ const Nav = styled.nav`
     right: 80px;
     cursor: pointer;
     z-index: 9999;
-    font-size: 20px;
+    font-size: 16px;
     color: white;
     letter-spacing: 4px;
     transition: 0.3s ease-in-out;

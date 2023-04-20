@@ -132,13 +132,20 @@ const MainText = styled.div`
 
   .main-top-text {
     color: #ffffff;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
     font-size: 40px;
-    letter-spacing: 10px;
+    line-height: 30px;
+    letter-spacing: 0.25em;
   }
 
   .main-text {
     color: #ffffff;
+    font-family: "Montserrat";
+    font-style: normal;
     font-size: 20px;
+    line-height: 32px;
   }
 
   @media (max-width: 1200px) {
@@ -207,13 +214,9 @@ const ConsultationButtonBox = styled.div`
   }
 
   .button {
-    font-size: 16px;
-    background-color: transparent;
-    letter-spacing: 4px;
     color: #ffffff;
     border: 1px solid #ffffff;
     padding: 10px 40px;
-    transition: 0.3s ease-in-out;
 
     :hover {
       border: 1px solid #c293ff;

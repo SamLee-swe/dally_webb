@@ -176,7 +176,7 @@ export default function PracticeAreaList() {
 
 const Container = styled.div`
   width: 100%;
-  max-width: 220px;
+  max-width: 320px;
   & span {
     display: block;
     width: 100%;
@@ -190,8 +190,13 @@ const Container = styled.div`
   }
 
   & li {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 35px;
+    letter-spacing: 0.1em;
     color: #808080;
-    padding: 12px 0;
+    margin-bottom: 15px;
     cursor: pointer;
     :hover {
       color: #67318d;
@@ -199,5 +204,11 @@ const Container = styled.div`
   }
   .active {
     color: #67318d;
+  }
+
+  @media (max-width: 1068px) {
+    & li {
+      font-size: 15px;
+    }
   }
 `;

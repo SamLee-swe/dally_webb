@@ -11,10 +11,21 @@ export default function Hamburger() {
         <span className="line line3"></span>
       </div>
       <ul className="menu-items">
-        <li>ATTORNEYS</li>
-        <li>PRACTICE AREAS</li>
-        <li>ABOUT US</li>
-        <li>CONTACT US</li>
+        <Link href={"/"} className="link">
+          <li>HOME</li>
+        </Link>
+        <Link href={"/attorneys"}>
+          <li>ATTORNEYS</li>
+        </Link>
+        <Link href={"/practice-areas"}>
+          <li>PRACTICE AREAS</li>
+        </Link>
+        <Link href={"/about-us"}>
+          <li>ABOUT US</li>
+        </Link>
+        <Link href={"/contact-us"}>
+          <li>CONTACT US</li>
+        </Link>
       </ul>
     </Container>
   );
@@ -40,13 +51,14 @@ const Container = styled.div`
     left: 0;
     width: 100%;
     text-align: center;
-    padding: 3rem 1rem;
+    padding: 3rem 6rem;
     list-style: none;
     opacity: 0;
     font-size: 2rem;
     background-color: #ffffff;
     transform: translateY(-5%);
     transition: transform 1s ease-in-out, opacity 1s;
+    display: none;
   }
 
   .menu-items li {
@@ -86,7 +98,6 @@ const Container = styled.div`
     top: 0;
     right: 10px;
     padding: 0.9rem;
-    z-index: 2;
     display: flex;
     flex-direction: column;
     justify-content: space-around;

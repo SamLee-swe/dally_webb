@@ -76,16 +76,18 @@ export default function Dally() {
           <span />
           <b>Awards</b>
           <p>
-            2021 Top Women Attorney in Texas 2020, Texas Monthly <br />
-            2021 Top Young Attorney in Texas, Texas Monthly <br />
+            2021 Top Women Attorney in Texas 2020, <em>Texas Monthly</em> <br />
+            2021 Top Young Attorney in Texas,<em>Texas Monthly</em> <br />
             2016-2021 AVVO Client’s Choice <br />
             2019-2021 Texas Rising Stars, Super Lawyers <br />
-            2020 Top Women Attorney in Texas Rising Stars, Texas Monthly <br />
-            2020 Texas Outstanding Young Attorney, Texas Monthly <br />
+            2020 Top Women Attorney in Texas Rising Stars,{" "}
+            <em>Texas Monthly</em> <br />
+            2020 Texas Outstanding Young Attorney, <em>Texas Monthly</em> <br />
             2017-2020 Fort Worth Magazine’s Top Attorney - Family Law <br />
-            2019 Top Attorney - Texas Outstanding Young Women Lawyers, TeTexas
-            Monthly <br />
-            2019 Top Attorney - Texas Outstanding Young Lawyers, Texas Monthly
+            2019 Top Attorney - Texas Outstanding Young Women Lawyers,{" "}
+            <em>Texas Monthly</em> <br />
+            2019 Top Attorney - Texas Outstanding Young Lawyers,{" "}
+            <em>Texas Monthly</em>
             <br />
             10 Best Attorneys - Texas Family Law by The American Institute of
             Family Law Attorneys <br />
@@ -126,15 +128,15 @@ export default function Dally() {
 const Container = styled.div`
   .center-wrapper {
     width: 100%;
-    max-width: 1300px;
+    max-width: 1230px;
     margin: 0 auto;
-    padding: 6rem 0;
+    padding: 4rem 0;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     .center-wrapper {
       padding: 2rem;
     }
@@ -148,15 +150,20 @@ const Container = styled.div`
 const Content = styled.div`
   display: inline-block;
   width: 100%;
-  max-width: 800px;
+  max-width: 752px;
   & b {
+    font-weight: 700;
+    display: block;
   }
   & p {
-    font-size: 15px;
     margin-top: 0.5rem;
-    letter-spacing: 1px;
-    line-height: 1.3rem;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+    display: inline-block;
   }
+
   & span {
     display: block;
     width: 100%;

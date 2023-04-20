@@ -4,11 +4,41 @@
   padding: 0;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  font-weight: medium;
   color: #000;
   line-height: 30px;
   font-size: 18px;
+ 
 }
+
+.header-white-large{
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 70px;
+letter-spacing: 0.25em;
+color: #ffffff;
+}
+.page-header {
+  font-weight: 500;
+font-size: 26px;
+line-height: 70px;
+letter-spacing: 0.25em;
+}
+.body-copy{
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 30px;
+}
+.body-copy-bold{
+  font-weight: 700;
+}
+.body-copy-italic{
+  font-style: italic;
+  font-weight: 500;
+}
+
+
 
 html,
 body {
@@ -27,4 +57,13 @@ a {
 }
 
 
+.button {
+  transition: 0.3s ease-in-out;
+  font-family: 'Montserrat';
+font-weight: 500;
+font-size: 16px;
+letter-spacing: 0.25em;
+text-transform: uppercase;
+background-color: transparent;
 
+}

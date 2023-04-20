@@ -11,23 +11,23 @@ export default function ContactUs() {
         src={bannerImage}
         alt={"attorney landing page banner image"}
         title="CONTACT US"
-        left="490px"
+        left="50px"
       />
       <Container>
         <div className="center-wrapper">
           <GoogleMap />
           <InfoBox>
             <div>
-              <h3>
+              <p className="contact-info">
                 To schedule a consultation, call 817-887-9206 or contact us
                 online through the form below.
-              </h3>
+              </p>
             </div>
 
             <div className="inside-wrapper">
-              <h5>FORT WORTH OFFICE</h5>
+              <p className="location-title">FORT WORTH OFFICE</p>
               <span />
-              <p>
+              <p className="body-copy">
                 2813 S. Hulen Street, Suite 250
                 <br /> Fort Worth, Texas 76109* <br />
                 Tel: 817-409-1136 <br />
@@ -37,9 +37,9 @@ export default function ContactUs() {
               <p className="italic">*Principal Office</p>
             </div>
             <div className="inside-wrapper">
-              <h5>GRANBURY OFFICE</h5>
+              <p className="location-title">GRANBURY OFFICE</p>
               <span />
-              <p>
+              <p className="body-copy">
                 106 S. Jones St. <br />
                 Granbury, Texas 76048 <br />
                 Tel: 817-408-3541 <br />
@@ -73,27 +73,30 @@ export default function ContactUs() {
 }
 
 const Container = styled.div`
-  padding: 5rem;
+  padding: 4rem;
 
   .center-wrapper {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
     width: 100%;
     height: 100%;
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
   .lower-text {
     width: 100%;
     max-width: 1200px;
-    margin: 2rem auto;
-    font-size: 10px;
-    line-height: 1.2;
+    margin: 4rem auto 0 auto;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1068px) {
     padding: 2rem;
     .center-wrapper {
+      align-items: center;
+      flex-direction: column;
     }
   }
 `;
@@ -101,30 +104,33 @@ const Container = styled.div`
 const InfoBox = styled.div`
   width: 100%;
   max-width: 620px;
+  margin-left: 1rem;
   & span {
     display: block;
     width: 100%;
-    max-width: 230px;
-    border-top: 2px solid #67318d;
+    max-width: 299px;
+    border-top: 1px solid #67318d;
     margin: 1rem 0;
   }
-  & h3 {
+  .contact-info {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 36px;
     color: #67318d;
-    font-size: 20px;
-    letter-spacing: 1px;
-    line-height: 1.5;
   }
-  & h5 {
-    letter-spacing: 3px;
-    font-size: 16px;
-    margin-top: 3rem;
+  .location-title {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    color: #272d47;
+    margin-top: 1.5rem;
   }
 
-  & p {
-    font-size: 16px;
-    letter-spacing: 1px;
-    line-height: 1.8;
-  }
   .italic {
     font-style: italic;
     font-size: 14px;

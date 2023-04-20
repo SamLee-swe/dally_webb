@@ -113,9 +113,7 @@ const MainWrapper = styled.div`
   }
 
   .button {
-    font-size: 16px;
     background-color: transparent;
-    letter-spacing: 4px;
     color: #67318d;
     border: 1px solid #67318d;
     padding: 10px 40px;
@@ -125,8 +123,7 @@ const MainWrapper = styled.div`
       color: #c293ff;
     }
   }
-
-  @media (max-width: 768px) {
+  @media (max-width: 1204px) {
     margin-top: 6rem;
     padding: 2rem;
     .title {
@@ -169,6 +166,15 @@ const ImageWapper = styled.div`
 
   .button {
     margin: 2rem 0 4rem;
+  }
+  @media (max-width: 1204px) {
+    .text-area {
+      margin-bottom: 2rem;
+    }
+    .button {
+      margin: 0;
+      letter-spacing: 0.1em;
+    }
   }
   @media (max-width: 768px) {
     grid-template-columns: repeat(1, 1fr);

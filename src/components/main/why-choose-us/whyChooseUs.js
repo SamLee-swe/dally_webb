@@ -6,7 +6,7 @@ export default function WhyChooseUs() {
       <div>
         <p className="title">WHY CHOOSE US</p>
         <span />
-        <p>
+        <p className="body">
           We understand the importance of effective communication, and we are
           committed to keeping you informed throughout your case. We will work
           tirelessly to achieve the best possible outcome for you and your loved
@@ -45,17 +45,19 @@ const Constainer = styled.div`
     margin-bottom: 2rem;
   }
 
-  & p {
+  .body {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
     font-size: 22px;
-    line-height: 1.8rem;
-    width: 90%;
+    line-height: 36px;
   }
 
   @media (max-width: 768px) {
     .title {
       font-size: 24px;
     }
-    & p {
+    .body {
       font-size: 18px;
       letter-spacing: 0;
     }

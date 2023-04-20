@@ -12,7 +12,7 @@ export default function AboutUs() {
         src={bannerImage}
         alt={"about-us landing page banner image"}
         title="ABOUT US"
-        left="400px"
+        left="53px"
       />
       <Container>
         <div className="center-wrapper">
@@ -20,8 +20,6 @@ export default function AboutUs() {
             <Image
               src={mainPic}
               alt="Phone icon"
-              width={454}
-              height={400}
               style={{
                 width: "100%",
                 maxWidth: "454px",
@@ -29,14 +27,14 @@ export default function AboutUs() {
               }}
             />
 
-            <h3>
+            <p className="contact-text">
               To schedule a consultation, call 817-409-1136 or contact us online
               through the form below.
-            </h3>
+            </p>
           </div>
 
           <InfoBox>
-            <p>
+            <p className="body-copy">
               We are passionate about helping resolve conflicts for our clients
               and their families. Our experienced attorneys are dedicated to
               providing you with the highest quality legal representation, and
@@ -97,12 +95,11 @@ export default function AboutUs() {
 }
 
 const Container = styled.div`
-  padding: 6rem;
+  padding: 4rem 2rem;
 
   .center-wrapper {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     width: 100%;
     height: 100%;
     justify-content: space-evenly;
@@ -110,46 +107,51 @@ const Container = styled.div`
   }
   .image-wrapper {
     display: inline-block;
-    & h3 {
-      color: #67318d;
-      font-size: 20px;
-      letter-spacing: 1px;
-      line-height: 1.5;
+    .contact-text {
       margin-top: 1rem;
-      max-width: 350px;
+      max-width: 437px;
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 36px;
+      color: #533575;
     }
   }
   .lower-text {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1197.74px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
     margin: 0 auto;
-    font-size: 10px;
-    line-height: 1.2;
   }
 
-  @media (max-width: 768px) {
-    padding: 2rem;
-    .center-wrapper {
+  @media (max-width: 1068px) {
+    padding: 1rem;
+    .contact-text {
+      margin-bottom: 2rem;
+    }
+    .lower-text {
+      font-size: 10px;
     }
   }
 `;
 
 const InfoBox = styled.div`
   width: 100%;
-  max-width: 620px;
+  max-width: 692px;
 
-  & p {
-    font-size: 16px;
-    letter-spacing: 1px;
-    line-height: 1.8;
-  }
   & ul {
     padding-left: 1rem;
 
     & li {
-      font-size: 15px;
-      letter-spacing: 1px;
-      line-height: 1.5;
+      font-family: "Montserrat";
+      font-style: normal;
+      font-size: 20px;
+      line-height: 30px;
     }
   }
   @media (max-width: 768px) {

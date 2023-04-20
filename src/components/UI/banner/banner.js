@@ -44,21 +44,22 @@ const Container = styled.div`
     top: 0;
     left: 0;
     width: 100%;
-    height: 99%;
+    height: 97%;
     background-color: #272d47;
     opacity: 0.8;
   }
 `;
 const Title = styled.p`
   position: absolute;
-  color: #ffffff;
   bottom: 9px;
   left: ${(props) => props.left};
   width: fit-content;
   background-color: rgba(103, 49, 141, 0.7);
   padding: 1rem 3rem;
-  letter-spacing: 6px;
+  font-style: normal;
   font-size: 26px;
+  letter-spacing: 0.25em;
+  color: #ffffff;
 
   @media (max-width: 768px) {
     left: 50px;

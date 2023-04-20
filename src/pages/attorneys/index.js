@@ -11,22 +11,22 @@ export default function Attorneys() {
         src={bannerImage}
         alt={"attorney landing page banner image"}
         title="ATTORNEYS"
-        left="370px"
+        left="75px"
       />
       <Container>
         <div className="center-wrapper">
           <NameBox>
             <Link href={"/attorneys/dally"}>
-              <h3>LORI E. DALLY</h3>
+              <p className="attorney-name">LORI E. DALLY</p>
             </Link>
             <Link href={"/attorneys/webb"}>
-              <h3>DANIEL WEBB</h3>
+              <p className="attorney-name">DANIEL WEBB</p>
             </Link>
             <Link href={"/attorneys/brewington"}>
-              <h3>MAX BREWINGTON</h3>
+              <p className="attorney-name">MAX BREWINGTON</p>
             </Link>
           </NameBox>
-          <p className="upper-text">
+          <p className="body-copy">
             At Dally & Webb Family Law, PLLC, we are dedicated to providing you
             with an unparalleled level of legal representation for all your
             family law needs. Our team of experienced attorneys understands the
@@ -53,19 +53,16 @@ const Container = styled.div`
     width: 100%;
     max-width: 1320px;
     margin: 0 auto;
-    padding: 6rem;
+    padding: 4rem;
     display: flex;
     justify-content: space-between;
   }
 
-  .upper-text {
-    font-size: 17px;
+  .body-copy {
     max-width: 800px;
-    letter-spacing: 1px;
-    line-height: 1.5rem;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 868px) {
     .center-wrapper {
       flex-direction: column;
       align-items: center;
@@ -84,20 +81,22 @@ const NameBox = styled.div`
   border-top: 1px solid #67318d;
   letter-spacing: 2px;
 
-  & h3 {
+  .attorney-name {
     color: #808080;
+    font-size: 20px;
+    font-weight: 500;
     :hover {
-      color: #67318d;
+      color: #c293ff;
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 868px) {
     margin-bottom: 2rem;
     flex-direction: row;
     max-width: 350px;
     padding-top: 1rem;
 
-    & h3 {
+    .attorney-name {
       font-size: 14px;
     }
   }
