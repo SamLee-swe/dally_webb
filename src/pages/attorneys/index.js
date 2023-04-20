@@ -11,7 +11,6 @@ export default function Attorneys() {
         src={bannerImage}
         alt={"attorney landing page banner image"}
         title="ATTORNEYS"
-        left="75px"
       />
       <Container>
         <div className="center-wrapper">

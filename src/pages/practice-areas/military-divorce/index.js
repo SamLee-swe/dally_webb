@@ -11,7 +11,6 @@ export default function MilitaryDivorce() {
         src={bannerImage}
         alt={"practice-areas landing page banner image"}
         title="PRACTICE AREAS"
-        left="75px"
       />
       <Container>
         <div className="wrapper">

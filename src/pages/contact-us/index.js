@@ -11,7 +11,7 @@ export default function ContactUs() {
         src={bannerImage}
         alt={"attorney landing page banner image"}
         title="CONTACT US"
-        left="50px"
+        left="60px"
       />
       <Container>
         <div className="center-wrapper">
