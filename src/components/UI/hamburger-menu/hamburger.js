@@ -1,30 +1,62 @@
 import styled from "styled-components";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import React, { useState, useEffect, useRef } from "react";
 
 export default function Hamburger() {
+  const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
+  const closeRef = useRef(null);
+
+  const handleClick = () => {
+    if (isOpen) {
+      setIsOpen(false);
+    } else {
+      setIsOpen(true);
+    }
+  };
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (closeRef.current && !closeRef.current.contains(event.target)) {
+        return setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [closeRef]);
+
   return (
-    <Container>
-      <input type="checkbox" name="" id="" className="check" />
+    <Container ref={closeRef}>
+      <input
+        type="checkbox"
+        className={"check"}
+        checked={isOpen}
+        onClick={() => handleClick()}
+      />
       <div className="ham-menu">
         <span className="line line1"></span>
         <span className="line line2"></span>
         <span className="line line3"></span>
       </div>
-      <ul className="menu-items">
+      <ul className={`menu-items`}>
         <Link href={"/"} className="link">
-          <li>HOME</li>
+          <li onClick={() => handleClick()}>HOME</li>
         </Link>
         <Link href={"/attorneys"}>
-          <li>ATTORNEYS</li>
+          <li onClick={() => handleClick()}>ATTORNEYS</li>
         </Link>
         <Link href={"/practice-areas"}>
-          <li>PRACTICE AREAS</li>
+          <li onClick={() => handleClick()}>PRACTICE AREAS</li>
         </Link>
         <Link href={"/about-us"}>
-          <li>ABOUT US</li>
+          <li onClick={() => handleClick()}>ABOUT US</li>
         </Link>
         <Link href={"/contact-us"}>
-          <li>CONTACT US</li>
+          <li onClick={() => handleClick()}>CONTACT US</li>
         </Link>
       </ul>
     </Container>
@@ -58,7 +90,7 @@ const Container = styled.div`
     background-color: #ffffff;
     transform: translateY(-5%);
     transition: transform 1s ease-in-out, opacity 1s;
-    display: none;
+    pointer-events: none;
   }
 
   .menu-items li {
@@ -68,6 +100,10 @@ const Container = styled.div`
   }
 
   .menu-items li :hover {
+    color: rgb(174, 174, 174);
+  }
+
+  .menu-items li :active {
     color: rgb(174, 174, 174);
   }
 
@@ -86,7 +122,7 @@ const Container = styled.div`
   }
 
   .check:checked ~ .menu-items {
-    display: block;
+    pointer-events: all;
     transform: translateY(0%);
     opacity: 1;
   }

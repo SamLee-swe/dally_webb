@@ -93,7 +93,7 @@ const FooterContainer = styled.footer`
     font-size: 10px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 868px) {
     .rights {
       font-size: 8px;
       text-align: center;
@@ -104,14 +104,14 @@ const FooterContainer = styled.footer`
 const Wapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 0 4rem 6rem;
+  justify-content: space-evenly;
   width: 100%;
+  margin-bottom: 4rem;
   .inside-wrapper {
     display: inline-block;
     vertical-align: top;
     width: 100%;
-    max-width: 376px;
+    max-width: 220px;
   }
   & span {
     display: block;
@@ -150,8 +150,7 @@ const Wapper = styled.div`
     }
   }
 
-  @media (max-width: 1300px) {
-    margin: 2rem 0 0 3rem;
+  @media (max-width: 1200px) {
     & span {
       max-width: 220px;
     }

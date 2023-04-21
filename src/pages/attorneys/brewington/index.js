@@ -3,6 +3,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import AttorneyBanner from "@/components/UI/attorney-banner/attorneyBanner";
 import banner from "../../../../public/images/brewington_banner.png";
+import SecondaryNav from "@/components/UI/attorney-secondary-nav/secondaryNav";
 export default function Brewington() {
   return (
     <Container>
@@ -15,6 +16,7 @@ export default function Brewington() {
         mobileTop={"15px"}
         priority={true}
       />
+      <SecondaryNav />
       <div className="center-wrapper">
         <Content className="item">
           <p>
@@ -100,8 +102,7 @@ const Container = styled.div`
   .center-wrapper {
     width: 100%;
     max-width: 1230px;
-    margin: 0 auto;
-    padding: 4rem 0;
+    margin: 4rem auto;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;

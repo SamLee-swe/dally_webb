@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
+import SecondaryNav from "@/components/UI/attorney-secondary-nav/secondaryNav";
 import AttorneyBanner from "@/components/UI/attorney-banner/attorneyBanner";
 import banner from "../../../../public/images/Dally_Banner.png";
 import profile from "../../../../public/images/Dally_profile.png";
@@ -15,6 +16,7 @@ export default function Dally() {
         email={"LORI@TEXFAMILYLAWYER.COM"}
         priority={true}
       />
+      <SecondaryNav />
       <div className="center-wrapper">
         <Content className="item">
           <p>

@@ -4,6 +4,7 @@ import styled from "styled-components";
 import AttorneyBanner from "@/components/UI/attorney-banner/attorneyBanner";
 import banner from "../../../../public/images/Webb_banner.png";
 import profile from "../../../../public/images/Webb_profile.png";
+import SecondaryNav from "@/components/UI/attorney-secondary-nav/secondaryNav";
 
 export default function Webb() {
   return (
@@ -15,6 +16,7 @@ export default function Webb() {
         email={"DANIEL@TEXFAMILYLAWYER.COM"}
         priority={true}
       />
+      <SecondaryNav />
       <div className="center-wrapper">
         <Content className="item">
           <p>

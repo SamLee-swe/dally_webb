@@ -300,6 +300,11 @@
     "tiny-glob" "^0.2.9"
     "tslib" "^2.4.0"
 
+"@popperjs/core@^2.11.7":
+  "integrity" "sha512-Cr4OjIkipTtcXKjAsm8agyleBuDHvxzeBoa1v543lbv1YaIwQjESsVcmjiWiPEbC1FIeHOG/Op9kdCmAmiS3Kw=="
+  "resolved" "https://registry.npmjs.org/@popperjs/core/-/core-2.11.7.tgz"
+  "version" "2.11.7"
+
 "@react-google-maps/api@^2.18.1":
   "integrity" "sha512-KVlUO/Shh+0g/3egWaKmY0sz6+0QOnYkBGvrBMJbz23519LauA+iJFc4NDCmWNHqD5Vhb/Bkg0kSJgq0Stz3Iw=="
   "resolved" "https://registry.npmjs.org/@react-google-maps/api/-/api-2.18.1.tgz"
@@ -536,6 +541,11 @@
   "integrity" "sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw=="
   "resolved" "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz"
   "version" "1.0.2"
+
+"bootstrap@^5.3.0-alpha3":
+  "integrity" "sha512-FBhOWMxkCFr74hesJdchLXhqagPTXS+kRNU3gE0FR5Ki/AdPSz32Ik96Z28+yBluCnE/pc9st7l1yPwKgbtfSA=="
+  "resolved" "https://registry.npmjs.org/bootstrap/-/bootstrap-5.3.0-alpha3.tgz"
+  "version" "5.3.0-alpha3"
 
 "brace-expansion@^1.1.7":
   "integrity" "sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA=="

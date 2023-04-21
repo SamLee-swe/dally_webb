@@ -3,15 +3,21 @@ import PhoneIcon from "../../../public/images/phone_icon.png";
 import EmailIcon from "../../../public/images/email_icon.png";
 import Image from "next/image";
 import Link from "next/link";
+import DropDownComponent from "../UI/dropdown-menu/DropDownMenu";
 
 export default function ContactUs() {
+  const locations = ["Forth Worth", "Granbury"];
+  const preferences = [
+    "Divorce",
+    "Child Support/Custody",
+    "Modification",
+    "Other",
+  ];
   return (
     <Constainer>
       <div className="container">
-        <Link href="/contact-us">
-          <p className="title">CONTACT US</p>
-        </Link>
-        <span />
+        <p className="title">CONTACT US</p>
+        <span className="line" />
         <div className="wrapper">
           <ContactForm>
             <input className="one" type="text" placeholder="Name*" required />
@@ -27,24 +33,9 @@ export default function ContactUs() {
               placeholder="Phone Number*"
               required
             />
-            <select className="four" placeholder="Office Preference*" required>
-              <option value="" disabled selected>
-                Office Preference*
-              </option>
-              <option value="Fort Worth">Fort Worth</option>
-              <option value="Granbury">Granbury</option>
-            </select>
-            <select className="five" placeholder="Area of Interest*" required>
-              <option value="" disabled selected>
-                Area of Interest*
-              </option>
-              <option value="Divorce">Divorce</option>
-              <option value="Child Support/Custody">
-                Child Support/Custody
-              </option>
-              <option value="Modification">Modification</option>
-              <option value="Other">Other</option>
-            </select>
+            <DropDownComponent title={"Office Preference*"} menu={locations} />
+            <DropDownComponent title={"Area of Interest*"} menu={preferences} />
+
             <button className="six">SUBMIT INFO</button>
           </ContactForm>
           <ContactInfo>
@@ -127,6 +118,7 @@ const Constainer = styled.div`
   }
 
   .title {
+    width: fit-content;
     color: #ffffff;
     font-size: 30px;
     letter-spacing: 2px;
@@ -134,7 +126,7 @@ const Constainer = styled.div`
     border-bottom: 2px solid #ffffff;
     padding-bottom: 1rem;
   }
-  & span {
+  .line {
     display: block;
     border-bottom: 1px solid #ffffff;
     margin-bottom: 2rem;
@@ -143,7 +135,6 @@ const Constainer = styled.div`
   & p {
     color: #ffffff;
     font-size: 12px;
-    width: 90%;
     line-height: 1.5;
   }
   @media (max-width: 1200px) {
@@ -169,16 +160,17 @@ const ContactForm = styled.form`
   flex-direction: column;
   align-items: flex-start;
 
-  & input,
-  select {
+  & input {
     width: 100%;
-    max-width: 490px;
-    padding: 1rem;
+    max-width: 492px;
+    padding: 0.67rem 1rem;
     margin-bottom: 1rem;
     border: none;
     background-color: #ffffff;
+    font-style: normal;
+    font-weight: 400;
     font-size: 14px;
-    letter-spacing: 1px;
+    line-height: 30px;
     line-height: 0;
   }
 
