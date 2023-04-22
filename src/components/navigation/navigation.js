@@ -16,12 +16,11 @@ export default function Navigation() {
       <Image
         src={logo}
         alt="banner logo"
-        className="logo"
+        className="main-logo"
         style={{
           height: "auto",
           cursor: "pointer",
         }}
-        onClick={() => router.push("/")}
       />
       <ul className="nav-menu">
         <Link href={"/attorneys"} className="link">
@@ -120,13 +119,12 @@ const Nav = styled.nav`
   }
 
   @media (max-width: 1300px) {
-    padding: 2.5rem 1rem 1rem 1rem;
+    padding: 3rem 1rem 1rem 1rem;
     .nav-menu {
       display: none;
     }
-    .logo {
-      max-width: 200px;
-      margin: -2rem 0 0 -8px;
+    .main-logo {
+      display: none;
     }
 
     .phoneLogo {

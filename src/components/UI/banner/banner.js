@@ -38,8 +38,7 @@ export default function Banner(props) {
 const Container = styled.div`
   width: 100%;
   position: relative;
-  & span {
-  }
+
   .active {
     position: absolute;
     top: 0;

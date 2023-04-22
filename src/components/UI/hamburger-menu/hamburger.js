@@ -2,6 +2,8 @@ import styled from "styled-components";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
+import logo from "../../../../public/images/banner_logo.png";
 
 export default function Hamburger() {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,6 +33,16 @@ export default function Hamburger() {
 
   return (
     <Container ref={closeRef}>
+      <Image
+        src={logo}
+        alt="banner logo"
+        className="logo"
+        style={{
+          height: "auto",
+          cursor: "pointer",
+        }}
+        onClick={() => router.push("/")}
+      />
       <input
         type="checkbox"
         className={"check"}
@@ -76,14 +88,20 @@ const Container = styled.div`
     margin: 0;
     box-sizing: border-box;
   }
+  .logo {
+    position: absolute;
+    width: 240px;
+    top: 16px;
+    left: 16px;
+  }
 
   .menu-items {
     position: absolute;
-    top: 50px;
+    top: 70px;
     left: 0;
     width: 100%;
     text-align: center;
-    padding: 3rem;
+    padding: 2rem 3rem;
     list-style: none;
     opacity: 0;
     font-size: 2rem;
@@ -136,7 +154,7 @@ const Container = styled.div`
     height: 3rem;
     width: 3rem;
     position: absolute;
-    top: 0;
+    top: 7px;
     right: 10px;
     padding: 0.9rem;
     display: flex;
