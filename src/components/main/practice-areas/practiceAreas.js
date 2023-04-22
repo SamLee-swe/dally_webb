@@ -123,7 +123,7 @@ const MainWrapper = styled.div`
       color: #c293ff;
     }
   }
-  @media (max-width: 1204px) {
+  @media (max-width: 1300px) {
     margin-top: 6rem;
     padding: 2rem;
     .title {
@@ -167,7 +167,7 @@ const ImageWapper = styled.div`
   .button {
     margin: 2rem 0 4rem;
   }
-  @media (max-width: 1204px) {
+  @media (max-width: 1300px) {
     .text-area {
       margin-bottom: 2rem;
     }

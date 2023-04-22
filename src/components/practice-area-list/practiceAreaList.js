@@ -206,9 +206,7 @@ const Container = styled.div`
     color: #67318d;
   }
 
-  @media (max-width: 1068px) {
-    & li {
-      font-size: 15px;
-    }
+  @media (max-width: 1300px) {
+    display: none;
   }
 `;

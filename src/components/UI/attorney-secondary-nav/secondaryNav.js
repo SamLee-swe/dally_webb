@@ -18,33 +18,22 @@ export default function SecondaryNav() {
   );
 }
 const NameBox = styled.div`
-  width: 100%;
+  width: 80%;
   max-width: 1230px;
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-start;
   border-top: 1px solid #67318d;
+
   letter-spacing: 2px;
   margin: 4rem auto 0;
-
   .attorney-name {
     color: #808080;
     font-size: 20px;
     font-weight: 500;
-    margin-top: 1rem;
     :hover {
       color: #c293ff;
-    }
-  }
-
-  @media (max-width: 868px) {
-    margin-bottom: 2rem;
-    flex-direction: row;
-    max-width: 350px;
-    padding-top: 1rem;
-
-    .attorney-name {
-      font-size: 14px;
     }
   }
 `;

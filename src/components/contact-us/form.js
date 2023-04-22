@@ -3,10 +3,10 @@ import PhoneIcon from "../../../public/images/phone_icon.png";
 import EmailIcon from "../../../public/images/email_icon.png";
 import Image from "next/image";
 import Link from "next/link";
-import DropDownComponent from "../UI/dropdown-menu/DropDownMenu";
+import DropDownComponent from "../dropdown-menu/dropDownMenu";
 
 export default function ContactUs() {
-  const locations = ["Forth Worth", "Granbury"];
+  const locations = ["Fort Worth", "Granbury"];
   const preferences = [
     "Divorce",
     "Child Support/Custody",
@@ -46,6 +46,7 @@ export default function ContactUs() {
                 width={15}
                 height={15}
                 style={{
+                  width: "auto",
                   height: "auto",
                   marginRight: "2rem",
                   display: "inline-block",
@@ -59,6 +60,7 @@ export default function ContactUs() {
                 width={15}
                 height={15}
                 style={{
+                  width: "auto",
                   height: "auto",
                   marginRight: "2rem",
                   display: "inline-block",
@@ -74,6 +76,7 @@ export default function ContactUs() {
                 height={23}
                 style={{
                   height: "auto",
+                  width: "auto",
                   marginRight: "1.5rem",
                   display: "inline-block",
                 }}
@@ -137,7 +140,7 @@ const Constainer = styled.div`
     font-size: 12px;
     line-height: 1.5;
   }
-  @media (max-width: 1200px) {
+  @media (max-width: 1300px) {
     .wrapper {
       flex-direction: column;
     }
@@ -159,19 +162,21 @@ const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: space-evenly;
 
   & input {
     width: 100%;
     max-width: 492px;
     padding: 0.67rem 1rem;
-    margin-bottom: 1rem;
     border: none;
     background-color: #ffffff;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
-    line-height: 30px;
     line-height: 0;
+    :focus {
+      outline: none;
+    }
   }
 
   .six {
@@ -190,7 +195,7 @@ const ContactForm = styled.form`
       color: #c293ff;
     }
   }
-  @media (max-width: 1200px) {
+  @media (max-width: 1300px) {
     max-width: 100%;
     gap: 1rem;
     display: grid;
@@ -198,6 +203,7 @@ const ContactForm = styled.form`
     .six {
       grid-column: 1;
       grid-row: 4;
+      max-width: 200px;
     }
     .six {
       font-size: 12px;
@@ -229,8 +235,8 @@ const ContactInfo = styled.div`
   & p {
     margin-top: 2rem;
   }
-  @media (max-width: 1200px) {
-    margin-top: 3rem;
+  @media (max-width: 1300px) {
+    margin-top: 1rem;
     max-width: 100%;
     .office-infos {
       margin: 0;

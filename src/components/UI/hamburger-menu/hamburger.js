@@ -43,7 +43,7 @@ export default function Hamburger() {
         <span className="line line3"></span>
       </div>
       <ul className={`menu-items`}>
-        <Link href={"/"} className="link">
+        <Link href={"/"}>
           <li onClick={() => handleClick()}>HOME</li>
         </Link>
         <Link href={"/attorneys"}>
@@ -83,7 +83,7 @@ const Container = styled.div`
     left: 0;
     width: 100%;
     text-align: center;
-    padding: 3rem 6rem;
+    padding: 3rem;
     list-style: none;
     opacity: 0;
     font-size: 2rem;
@@ -91,6 +91,11 @@ const Container = styled.div`
     transform: translateY(-5%);
     transition: transform 1s ease-in-out, opacity 1s;
     pointer-events: none;
+    display: flex;
+    justify-content: space-evenly;
+    @media (max-width: 850px) {
+      display: grid;
+    }
   }
 
   .menu-items li {

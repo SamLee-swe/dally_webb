@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import Link from "next/link";
 import Banner from "@/components/UI/banner/banner";
 import bannerImage from "../../../../public/images/practice-areas-landing-banner.png";
 import PraceticeAreaList from "@/components/practice-area-list/practiceAreaList";
+import MobileDropDown from "@/components/mobile-dropdown-menu/mobileDropDown";
 
 export default function CollaborativeDivorce() {
   return (
@@ -15,6 +15,9 @@ export default function CollaborativeDivorce() {
       <Container>
         <div className="wrapper">
           <PraceticeAreaList />
+          <span className="mobile-dropdwon">
+            <MobileDropDown title={"Practice Areas"} />
+          </span>
           <div>
             <p className="body-copy-bold">COLLABORATIVE DIVORCE</p>
             <p className="body-copy">
@@ -75,7 +78,19 @@ const Container = styled.div`
     max-width: 760px;
   }
 
-  @media (max-width: 1068px) {
+  .mobile-dropdwon {
+    display: none;
+  }
+
+  @media (max-width: 1300px) {
+    .mobile-dropdwon {
+      width: 100%;
+      max-width: 492px;
+      height: 44px;
+      box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.1);
+      display: block;
+      margin-bottom: 2rem;
+    }
     .wrapper {
       flex-direction: column;
       align-items: center;

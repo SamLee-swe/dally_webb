@@ -15,9 +15,9 @@ export default function Home() {
             alt="main content area image"
             quality={100}
             priority={true}
-            className="main-image"
+            className="main-image item"
           />
-          <MainText>
+          <MainText className="item">
             <p className="main-top-text">DIVORCE</p>
             <span />
             <p className="main-top-text">CUSTODY</p>
@@ -94,25 +94,23 @@ const ImageContainer = styled.div`
     height: auto;
   }
 
-  @media (max-width: 1200px) {
-    height: 540px;
+  @media (max-width: 1400px) {
+    height: 560px;
     .main-image {
       max-width: 400px;
-      margin-top: 6rem;
+      margin-top: 7rem;
     }
   }
   @media (max-width: 795px) {
-    height: 400px;
-    .main-image {
-      max-width: 300px;
-      margin-top: 4rem;
+    .wrapper {
+      flex-direction: column;
     }
-  }
-  @media (max-width: 478px) {
-    height: 260px;
     .main-image {
-      max-width: 200px;
-      margin-top: 3rem;
+      max-width: 350px;
+      margin-top: 0rem;
+    }
+    .item:nth-child(2) {
+      order: -1;
     }
   }
 `;
@@ -148,7 +146,7 @@ const MainText = styled.div`
     line-height: 32px;
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1400px) {
     margin-bottom: 0;
     .main-top-text {
       font-size: 22px;
@@ -163,6 +161,8 @@ const MainText = styled.div`
     }
   }
   @media (max-width: 795px) {
+    padding: 1rem;
+    margin-top: 4rem;
     .main-top-text {
       font-size: 16px;
       letter-spacing: 4px;
@@ -170,25 +170,11 @@ const MainText = styled.div`
     }
     & span {
       max-width: 200px;
-      margin: 0.2rem 0;
+      margin: 0.1rem 0;
     }
     .main-text {
       font-size: 12px;
       line-height: 1.2rem;
-    }
-  }
-  @media (max-width: 478px) {
-    .main-top-text {
-      font-size: 12px;
-      line-height: 1;
-    }
-    & span {
-      max-width: 150px;
-      margin: 0.1rem 0;
-    }
-    .main-text {
-      font-size: 10px;
-      line-height: 1.2;
     }
   }
 `;
@@ -224,7 +210,7 @@ const ConsultationButtonBox = styled.div`
     }
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1400px) {
     justify-content: space-evenly;
     bottom: -100px;
     background-color: #533575;

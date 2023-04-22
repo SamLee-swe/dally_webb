@@ -8,7 +8,12 @@ export default function attorneyBanner(props) {
         <p className="header-white-large">{props.name}</p>
         <p className="practice-area">ATTORNEY & COUNSELOR AT LAW</p>
       </Title>
-      <Image className="attorney-banner-img" src={props.src} alt={props.alt} />
+      <Image
+        className="attorney-banner-img"
+        src={props.src}
+        alt={props.alt}
+        priority
+      />
 
       <Contact>
         <p className="contact-info">817-409-1136</p>
@@ -31,17 +36,11 @@ const Container = styled.div`
     z-index: 2;
     top: ${(props) => (props.top ? props.top : "-18px")};
   }
-  @media (max-width: 1200px) {
-    .attorney-banner-img {
-      right: -4rem;
-    }
-  }
-  @media (max-width: 572px) {
+
+  @media (max-width: 1300px) {
     height: 200px;
     .attorney-banner-img {
-      max-width: 250px;
-      right: -2rem;
-      top: ${(props) => (props.mobileTop ? props.mobileTop : "11px")};
+      display: none;
     }
   }
 `;
@@ -63,16 +62,16 @@ const Title = styled.div`
     margin-top: 1rem;
   }
 
-  @media (max-width: 1000px) {
-    top: 5rem;
+  @media (max-width: 1300px) {
+    top: 0;
     left: 2rem;
     .header-white-large {
-      font-size: 30px;
-      letter-spacing: 0.1em;
-      padding-bottom: 0.5rem;
+      font-size: 32px;
+      letter-spacing: 0.2em;
+      padding-bottom: 0.2rem;
     }
     .practice-area {
-      font-size: 16px;
+      font-size: 18px;
       margin-top: 0.5rem;
     }
   }
@@ -80,14 +79,14 @@ const Title = styled.div`
     top: 2rem;
     left: 2rem;
     .header-white-large {
-      font-size: 16px;
+      font-size: 26px;
       line-height: normal;
       letter-spacing: 5px;
       border-bottom: 1px solid #67318d;
       padding-bottom: 0.5rem;
     }
     .practice-area {
-      font-size: 10px;
+      font-size: 14px;
       letter-spacing: 2px;
       margin-top: 0.5rem;
     }
@@ -107,11 +106,11 @@ const Contact = styled.div`
     margin: 0.5rem 0 0.5rem 5rem;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1300px) {
     padding: 0;
     padding-left: 1rem;
     .contact-info {
-      font-size: 12px;
+      font-size: 15px;
       line-height: normal;
       letter-spacing: 2px;
       margin: 0.5rem 0 0.5rem 1rem;
@@ -119,13 +118,8 @@ const Contact = styled.div`
   }
 
   @media (max-width: 572px) {
-    padding: 0;
-    padding-left: 1rem;
     .contact-info {
-      font-size: 7px;
-      line-height: normal;
-      letter-spacing: 2px;
-      margin: 0.5rem 0 0.5rem 1rem;
+      font-size: 12px;
     }
   }
 `;

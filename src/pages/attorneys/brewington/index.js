@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
 import AttorneyBanner from "@/components/UI/attorney-banner/attorneyBanner";
@@ -108,7 +107,7 @@ const Container = styled.div`
     flex-wrap: wrap;
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1300px) {
     .center-wrapper {
       padding: 2rem;
     }

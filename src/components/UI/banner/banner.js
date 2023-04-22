@@ -28,6 +28,7 @@ export default function Banner(props) {
           height: `auto`,
           margin: `${(props) => props.margin}`,
         }}
+        priority
       />
       <span className={active ? "active" : ""} />
       <Title left={props.left}>{props.title}</Title>

@@ -2,9 +2,6 @@ import React, { useEffect, useState } from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
 function MyComponent() {
-  const [isShown, setIsShown] = useState(false);
-  const [locationId, setLocationId] = useState(0);
-  const [isOn, setIsOn] = useState(false);
   const [zoom, setZoom] = useState(11);
   const [containerStyle, setContainerStyle] = useState({
     width: "100%",
@@ -52,17 +49,6 @@ function MyComponent() {
     return () => mediaQuery.removeListener(handleResize);
   }, []);
 
-  const mouseHoverHandler = (event, id) => {
-    setLocationId(id);
-    setIsShown(true);
-    setIsOn(true);
-  };
-
-  const mouseHoverOffHandler = () => {
-    setIsShown(false);
-    setIsOn(false);
-  };
-
   return (
     <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_API}>
       <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={zoom}>
@@ -71,14 +57,6 @@ function MyComponent() {
             <Marker
               key={office.id}
               position={{ lat: office.lat, lng: office.lng }}
-              // onMouseOver={(event) => {
-              //   mouseHoverHandler(event, office.id);
-              // }}
-              // onMouseOut={() => mouseHoverOffHandler()}
-              scale={{
-                width: isShown & (office?.id == idx) ? 55 : 45,
-                height: isShown & (office?.id == idx) ? 55 : 45,
-              }}
             />
           ))}
       </GoogleMap>

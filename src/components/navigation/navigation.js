@@ -16,8 +16,6 @@ export default function Navigation() {
       <Image
         src={logo}
         alt="banner logo"
-        width={478}
-        height={74}
         className="logo"
         style={{
           height: "auto",
@@ -46,6 +44,7 @@ export default function Navigation() {
           width={15}
           height={15}
           style={{
+            width: "auto",
             height: "auto",
             position: "relative",
             top: "3px",
@@ -68,7 +67,7 @@ const Nav = styled.nav`
   left: 0;
   z-index: 100;
   background-color: #ffffff;
-  padding: 3rem 2rem 2rem 3rem;
+  padding: 3rem 0rem 2rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -120,7 +119,7 @@ const Nav = styled.nav`
     display: none;
   }
 
-  @media (max-width: 1390px) {
+  @media (max-width: 1300px) {
     padding: 2.5rem 1rem 1rem 1rem;
     .nav-menu {
       display: none;

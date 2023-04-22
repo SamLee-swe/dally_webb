@@ -61,7 +61,7 @@ const Container = styled.div`
     max-width: 800px;
   }
 
-  @media (max-width: 868px) {
+  @media (max-width: 1300px) {
     .center-wrapper {
       flex-direction: column;
       align-items: center;
@@ -89,11 +89,9 @@ const NameBox = styled.div`
     }
   }
 
-  @media (max-width: 868px) {
+  @media (max-width: 1300px) {
     margin-bottom: 2rem;
-    flex-direction: row;
     max-width: 350px;
-    padding-top: 1rem;
 
     .attorney-name {
       font-size: 14px;
