@@ -21,6 +21,7 @@ export default function Navigation() {
           height: "auto",
           cursor: "pointer",
         }}
+        onClick={() => router.push("/")}
       />
       <ul className="nav-menu">
         <Link href={"/attorneys"} className="link">

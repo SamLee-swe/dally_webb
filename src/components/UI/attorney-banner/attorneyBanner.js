@@ -48,7 +48,7 @@ const Container = styled.div`
 const Title = styled.div`
   position: absolute;
   top: 4rem;
-  left: 6rem;
+  left: 12.6rem;
 
   .header-white-large {
     border-bottom: 2px solid #67318d;
@@ -103,7 +103,7 @@ const Contact = styled.div`
     color: #ffffff;
     font-size: 20px;
     letter-spacing: 0.25em;
-    margin: 0.5rem 0 0.5rem 5rem;
+    margin: 0.5rem 0 0.5rem 11.7rem;
   }
 
   @media (max-width: 1300px) {
