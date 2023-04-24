@@ -1,5 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
-import { Router, useRouter } from "next/router";
+import React, { useState } from "react";
 import styled from "styled-components";
 import DropDownComponent from "../dropdown-menu/dropDownMenu";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
