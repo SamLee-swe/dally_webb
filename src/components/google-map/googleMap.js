@@ -6,7 +6,8 @@ function MyComponent() {
   const [containerStyle, setContainerStyle] = useState({
     width: "100%",
     maxWidth: "588px",
-    height: "581px",
+    height: "auto",
+    overflow: "visible",
   });
 
   const center = {
@@ -54,10 +55,7 @@ function MyComponent() {
       <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={zoom}>
         {offices &&
           offices.map((office, idx) => (
-            <Marker
-              key={office.id}
-              position={{ lat: office.lat, lng: office.lng }}
-            />
+            <Marker key={idx} position={{ lat: office.lat, lng: office.lng }} />
           ))}
       </GoogleMap>
     </LoadScript>

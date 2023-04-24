@@ -1,16 +1,25 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 
-export default function DropDownComponent(props) {
+export default function DropDownComponent({
+  menu,
+  title,
+  handleSelect,
+  type,
+  size,
+  padding,
+  isSubmitted,
+}) {
   const closeRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
   const [selectedItem, setSelectedItem] = useState("");
-
   const handleClick = (e) => {
     setSelectedItem(e);
     setIsClicked(true);
     setIsOpen(false);
+
+    handleSelect(e);
   };
 
   useEffect(() => {
@@ -26,28 +35,32 @@ export default function DropDownComponent(props) {
   }, [closeRef]);
 
   return (
-    <DropDown ref={closeRef} size={props?.size} padding={props?.padding}>
+    <DropDown ref={closeRef} size={size} padding={padding}>
       <div className="drop-down__header" onClick={() => setIsOpen(!isOpen)}>
         <div
           className={`drop-down__header__title ${
-            isOpen ? "open" : isClicked ? "clicked" : ""
+            isOpen ? "open" : isClicked && !isSubmitted ? "clicked" : ""
           }`}
         >
-          {isClicked ? <p>{selectedItem}</p> : <p>{props.title}</p>}
+          {isClicked && !isSubmitted ? <p>{selectedItem}</p> : <p>{title}</p>}
         </div>
         <div className="drop-down__header__arrow">
           <DropDownArrow
-            className={isOpen ? "open" : isClicked ? "clicked" : ""}
+            className={
+              isOpen ? "open" : isClicked && !isSubmitted ? "clicked" : ""
+            }
           />
         </div>
       </div>
       <ul className={`drop-down__body ${isOpen ? "open" : ""}`}>
-        {props?.menu?.map((item, index) => {
+        {menu.map((item, index) => {
           return (
             <li
               className="drop-down__body__item"
               key={index}
-              onClick={() => handleClick(item)}
+              onClick={() => {
+                handleClick(item);
+              }}
             >
               {item}
             </li>

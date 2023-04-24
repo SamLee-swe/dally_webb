@@ -1,11 +1,17 @@
+import React, { useRef, useEffect, useState } from "react";
+import { Router, useRouter } from "next/router";
 import styled from "styled-components";
-import PhoneIcon from "../../../public/images/phone_icon.png";
-import EmailIcon from "../../../public/images/email_icon.png";
-import Image from "next/image";
-import Link from "next/link";
 import DropDownComponent from "../dropdown-menu/dropDownMenu";
+import {
+  GoogleReCaptchaProvider,
+  GoogleReCaptcha,
+} from "react-google-recaptcha-v3";
 
-export default function ContactUs() {
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+export default function Form() {
+  const siteKey = process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY;
   const locations = ["Fort Worth", "Granbury"];
   const preferences = [
     "Divorce",
@@ -13,148 +19,130 @@ export default function ContactUs() {
     "Modification",
     "Other",
   ];
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [office, setOffice] = useState("");
+  const [area, setArea] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const isName = (name) => {
+      const pattern = /^[a-zA-Z]{2,}(?: [a-zA-Z]+){0,2}$/;
+      return pattern.test(name);
+    };
+    const isEmail = (email) => {
+      let pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      return pattern.test(email);
+    };
+    const isPhone = (phone) => {
+      let pattern =
+        /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+      return pattern.test(phone);
+    };
+    const data = {
+      name,
+      email,
+      phone,
+      office,
+      area,
+    };
+    if (!name || !email || !phone || !office || !area) {
+      return toast.error("Please fill out all fields", {
+        position: "top-center",
+        style: {
+          width: "fit-content",
+          fontFamily: "Montserrat",
+        },
+      });
+    } else if (!isName(name) || !isEmail(email) || !isPhone(phone))
+      return toast.error("Please enter valid information", {
+        position: "top-center",
+        style: {
+          width: "max-content",
+          fontFamily: "Montserrat",
+        },
+      });
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    const json = await res.json();
+    if (!res.ok) throw Error(json.message);
+    toast.success("Message Sent", {
+      position: "top-center",
+    });
+    setName("");
+    setEmail("");
+    setPhone("");
+    setIsSubmitted(true);
+  };
+
+  const handleSelect = (e) => {
+    setIsSubmitted(false);
+    if (e === "Fort Worth" || e === "Granbury") {
+      setOffice(e);
+    } else {
+      setArea(e);
+    }
+  };
+
   return (
-    <Constainer>
-      <div className="container">
-        <p className="title">CONTACT US</p>
-        <span className="line" />
-        <div className="wrapper">
-          <ContactForm>
-            <input className="one" type="text" placeholder="Name*" required />
-            <input
-              className="two"
-              type="text"
-              placeholder="Email Address*"
-              required
-            />
-            <input
-              className="three"
-              type="text"
-              placeholder="Phone Number*"
-              required
-            />
-            <DropDownComponent title={"Office Preference*"} menu={locations} />
-            <DropDownComponent title={"Area of Interest*"} menu={preferences} />
+    <GoogleReCaptchaProvider reCaptchaKey={siteKey}>
+      <ContactForm onSubmit={handleSubmit}>
+        <InputField
+          placeholder="Name*"
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+        <InputField
+          placeholder="Email Address*"
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        ></InputField>
+        <InputField
+          type="text"
+          placeholder="Phone Number*"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          required
+        ></InputField>
 
-            <button className="six">SUBMIT INFO</button>
-          </ContactForm>
-          <ContactInfo>
-            <div style={{ width: "100%" }}>
-              <Image
-                src={PhoneIcon}
-                alt="Phone icon"
-                width={15}
-                height={15}
-                style={{
-                  width: "auto",
-                  height: "auto",
-                  marginRight: "2rem",
-                  display: "inline-block",
-                }}
-              />
-              <p className="office-infos">FORT WORTH - 817-409-1136</p>
-              <br />
-              <Image
-                src={PhoneIcon}
-                alt="Phone icon"
-                width={15}
-                height={15}
-                style={{
-                  width: "auto",
-                  height: "auto",
-                  marginRight: "2rem",
-                  display: "inline-block",
-                }}
-              />
-              <p className="office-infos">GRANBURY - 817-408-3541</p>
-              <br />
-
-              <Image
-                src={EmailIcon}
-                alt="Email icon"
-                width={23}
-                height={23}
-                style={{
-                  height: "auto",
-                  width: "auto",
-                  marginRight: "1.5rem",
-                  display: "inline-block",
-                }}
-              />
-              <p className="office-infos">LORI@TEXFAMILYLAWYER.COM</p>
-            </div>
-
-            <p>
-              ** We welcome your email, but please understand that if you are
-              not already a client of Dally & Webb Family Law, PLLC, we cannot
-              consult with or represent you until we confirm that doing so would
-              not create a conflict of interest and is otherwise consistent with
-              the policies of our firm. Accordingly, please do not include any
-              confidential information until we verify that the firm is in a
-              position to consult with or represent you. Prior to that time,
-              there is no assurance that information you send us will be
-              maintained as confidential. Submitting information does not create
-              an attorney-client relationship and no representation occurs
-              unless and until a contract for legal services is executed. Thank
-              you for your consideration.
-            </p>
-          </ContactInfo>
-        </div>
-      </div>
-    </Constainer>
+        <DropDownComponent
+          title={"Office Preference*"}
+          menu={locations}
+          handleSelect={handleSelect}
+          isSubmitted={isSubmitted}
+          type="text"
+          required
+        />
+        <DropDownComponent
+          handleSelect={handleSelect}
+          title={"Area of Interest*"}
+          menu={preferences}
+          isSubmitted={isSubmitted}
+          type="text"
+          required
+        />
+        <button className="six" type="submit">
+          SUBMIT INFO
+        </button>
+      </ContactForm>
+      <GoogleReCaptcha />
+      <ToastContainer />
+    </GoogleReCaptchaProvider>
   );
 }
-
-const Constainer = styled.div`
-  position: relative;
-  background-color: #533575;
-
-  .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-  }
-  .wrapper {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .title {
-    width: fit-content;
-    color: #ffffff;
-    font-size: 30px;
-    letter-spacing: 2px;
-    width: fit-content;
-    border-bottom: 2px solid #ffffff;
-    padding-bottom: 1rem;
-  }
-  .line {
-    display: block;
-    border-bottom: 1px solid #ffffff;
-    margin-bottom: 2rem;
-  }
-
-  & p {
-    color: #ffffff;
-    font-size: 12px;
-    line-height: 1.5;
-  }
-  @media (max-width: 1300px) {
-    .wrapper {
-      flex-direction: column;
-    }
-  }
-  @media (max-width: 768px) {
-    .title {
-      font-size: 24px;
-    }
-    .wrapper {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-`;
 
 const ContactForm = styled.form`
   width: 100%;
@@ -163,21 +151,6 @@ const ContactForm = styled.form`
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-evenly;
-
-  & input {
-    width: 100%;
-    max-width: 492px;
-    padding: 0.67rem 1rem;
-    border: none;
-    background-color: #ffffff;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 0;
-    :focus {
-      outline: none;
-    }
-  }
 
   .six {
     color: #ffffff;
@@ -195,6 +168,7 @@ const ContactForm = styled.form`
       color: #c293ff;
     }
   }
+
   @media (max-width: 1300px) {
     max-width: 100%;
     gap: 1rem;
@@ -220,30 +194,17 @@ const ContactForm = styled.form`
   }
 `;
 
-const ContactInfo = styled.div`
+const InputField = styled.input`
   width: 100%;
-  max-width: 600px;
-  padding: 0;
-  .office-infos {
-    display: inline-block;
-    color: #ffffff;
-    font-size: 20px;
-    letter-spacing: 4px;
-    margin: 0.5rem 0 1rem 0;
-    vertical-align: middle;
-  }
-  & p {
-    margin-top: 2rem;
-  }
-  @media (max-width: 1300px) {
-    margin-top: 1rem;
-    max-width: 100%;
-    .office-infos {
-      margin: 0;
-      font-size: 12px;
-    }
-    max-width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+  max-width: 492px;
+  padding: 0.67rem 1rem;
+  border: none;
+  background-color: #ffffff;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 0;
+  :focus {
+    outline: none;
   }
 `;

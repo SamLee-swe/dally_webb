@@ -48,6 +48,7 @@ export default function Hamburger() {
         className={"check"}
         checked={isOpen}
         onClick={() => handleClick()}
+        onChange={() => handleClick()}
       />
       <div className="ham-menu">
         <span className="line line1"></span>

@@ -1,11 +1,10 @@
 import Head from "next/head";
 import Navigation from "@/components/navigation/navigation";
-import Form from "@/components/contact-us/form";
 import Footer from "@/components/footer/footer";
 import styled from "styled-components";
 import "../styles/globals.css";
 import { Inter } from "next/font/google";
-import Script from "next/script";
+import ContactInfos from "@/components/contact-us/contactInfo";
 
 const inter = Inter({ subsets: ["latin"] });
 export default function App({ Component, pageProps }) {
@@ -25,7 +24,7 @@ export default function App({ Component, pageProps }) {
       <Container>
         <Navigation />
         <Component {...pageProps} />
-        <Form />
+        <ContactInfos />
         <Footer />
       </Container>
     </>
