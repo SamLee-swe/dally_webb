@@ -41,7 +41,7 @@ export default function UncontestedDivorce() {
               having them served by a Process Server.
               <br />
               <br />
-              Generally, you file for divorce in the county in which you
+              Generally, &thinsp;you file for divorce in the county in which you
               currently reside. While there are certain exceptions, you cannot
               file for divorce in Texas unless you have been living in the state
               for 6 months and residing in the county in which you intend to

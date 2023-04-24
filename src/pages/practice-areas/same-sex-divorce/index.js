@@ -22,7 +22,7 @@ export default function SameSexDivorce() {
             <p className="body-copy-bold">SAME-SEX DIVORCE</p>
             <p className="body-copy">
               Prior to June of 2015, the Texas courts refused to recognize
-              same-sex divorces because the State of Texas did not recognize
+              same-sex divorces because the state of Texas did not recognize
               same-sex marriage. On June 26, 2015, the Supreme Court heard the
               case Obergefell v. Hodges, which legalized same-sex marriage in
               all 50 states. This landmark case gave same-sex couples a legal
