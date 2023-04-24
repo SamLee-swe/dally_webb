@@ -2,16 +2,10 @@ import React, { useRef, useEffect, useState } from "react";
 import { Router, useRouter } from "next/router";
 import styled from "styled-components";
 import DropDownComponent from "../dropdown-menu/dropDownMenu";
-import {
-  GoogleReCaptchaProvider,
-  GoogleReCaptcha,
-} from "react-google-recaptcha-v3";
-
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 export default function Form() {
-  const siteKey = process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY;
   const locations = ["Fort Worth", "Granbury"];
   const preferences = [
     "Divorce",
@@ -26,8 +20,20 @@ export default function Form() {
   const [office, setOffice] = useState("");
   const [area, setArea] = useState("");
 
-  const handleSubmit = async (e) => {
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
+  const handleSubmitForm = (e) => {
     e.preventDefault();
+    if (!executeRecaptcha) {
+      console.log("Execute recaptcha not yet available");
+      return;
+    }
+    executeRecaptcha("handleSubmit").then((token) => {
+      handleSubmit(token);
+    });
+  };
+
+  const handleSubmit = async (token) => {
     const isName = (name) => {
       const pattern = /^[a-zA-Z]{2,}(?: [a-zA-Z]+){0,2}$/;
       return pattern.test(name);
@@ -70,6 +76,7 @@ export default function Form() {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
+        token,
       },
       body: JSON.stringify(data),
     });
@@ -94,53 +101,49 @@ export default function Form() {
   };
 
   return (
-    <GoogleReCaptchaProvider reCaptchaKey={siteKey}>
-      <ContactForm onSubmit={handleSubmit}>
-        <InputField
-          placeholder="Name*"
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
-        <InputField
-          placeholder="Email Address*"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        ></InputField>
-        <InputField
-          type="text"
-          placeholder="Phone Number*"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          required
-        ></InputField>
-
-        <DropDownComponent
-          title={"Office Preference*"}
-          menu={locations}
-          handleSelect={handleSelect}
-          isSubmitted={isSubmitted}
-          type="text"
-          required
-        />
-        <DropDownComponent
-          handleSelect={handleSelect}
-          title={"Area of Interest*"}
-          menu={preferences}
-          isSubmitted={isSubmitted}
-          type="text"
-          required
-        />
-        <button className="six" type="submit">
-          SUBMIT INFO
-        </button>
-      </ContactForm>
-      <GoogleReCaptcha />
+    <ContactForm onSubmit={handleSubmitForm}>
+      <InputField
+        placeholder="Name*"
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        required
+      />
+      <InputField
+        placeholder="Email Address*"
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        required
+      ></InputField>
+      <InputField
+        type="text"
+        placeholder="Phone Number*"
+        value={phone}
+        onChange={(e) => setPhone(e.target.value)}
+        required
+      ></InputField>
+      <DropDownComponent
+        title={"Office Preference*"}
+        menu={locations}
+        handleSelect={handleSelect}
+        isSubmitted={isSubmitted}
+        type="text"
+        required
+      />
+      <DropDownComponent
+        handleSelect={handleSelect}
+        title={"Area of Interest*"}
+        menu={preferences}
+        isSubmitted={isSubmitted}
+        type="text"
+        required
+      />
+      <button className="six" type="submit">
+        SUBMIT INFO
+      </button>{" "}
       <ToastContainer />
-    </GoogleReCaptchaProvider>
+    </ContactForm>
   );
 }
 

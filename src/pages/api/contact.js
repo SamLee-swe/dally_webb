@@ -11,6 +11,18 @@ export default async function contact(req, res) {
       return res.status(400).json({ error: "Please fill out all fields" });
     }
 
+    const token = req.headers.token;
+    await fetch(
+      `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SECRET_KEY}&response=${token}`,
+      {
+        method: "POST",
+      }
+    ).then((response) => {
+      if (response.success !== 200) {
+        return res.status(400);
+      }
+    });
+
     let nodemailer = require("nodemailer");
     const email = process.env.EMAIL;
     const pass = process.env.PASSWORD;

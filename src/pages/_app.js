@@ -3,13 +3,21 @@ import Navigation from "@/components/navigation/navigation";
 import Footer from "@/components/footer/footer";
 import styled from "styled-components";
 import "../styles/globals.css";
-import { Inter } from "next/font/google";
 import ContactInfos from "@/components/contact-us/contactInfo";
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 
-const inter = Inter({ subsets: ["latin"] });
 export default function App({ Component, pageProps }) {
+  const siteKey = process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY;
   return (
-    <>
+    <GoogleReCaptchaProvider
+      reCaptchaKey={siteKey}
+      scriptProps={{
+        async: false,
+        defer: false,
+        appendTo: "head",
+        nonce: undefined,
+      }}
+    >
       <Head>
         <title>Dally and Webb</title>
         <meta name="description" content="A lawfrim website" />
@@ -27,7 +35,7 @@ export default function App({ Component, pageProps }) {
         <ContactInfos />
         <Footer />
       </Container>
-    </>
+    </GoogleReCaptchaProvider>
   );
 }
 
