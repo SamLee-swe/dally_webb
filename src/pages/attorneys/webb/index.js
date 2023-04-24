@@ -22,7 +22,7 @@ export default function Webb() {
             When I first opened my law practice, the only area of law that I
             didn’t want to practice was family law. However, over my first few
             years I discovered two things: One, I was very good at family law;
-            and Two, I enjoyed being able to help people as they worked through
+            and two, I enjoyed being able to help people as they worked through
             some of the most important parts of their lives. I view it as part
             of my mission to help clients and their children suffer as little
             pain and trauma as possible through divorce and child custody

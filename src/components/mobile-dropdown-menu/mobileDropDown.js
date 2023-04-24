@@ -67,7 +67,7 @@ export default function MobileDropDown(props) {
       slug: "/practice-areas/modification",
     },
     {
-      area: "Grandpraent Rights",
+      area: "Grandparent Rights",
       slug: "/practice-areas/grandparent-rights",
     },
     {

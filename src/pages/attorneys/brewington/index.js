@@ -31,9 +31,9 @@ export default function Brewington() {
             graduated from a small high school in Southeastern Kansas; spent one
             semester at a college hoping to play football at the next level; and
             then came to my senses by enrolling at Pittsburg State University.
-            After graduation I considered medical school or law school BEFORE I
+            After graduation, I considered medical school or law school BEFORE I
             finally agreed to enter the seminary. I was sent to Holy Trinity
-            Seminary on the campus of University of Dallas. Ordained in 1977 I
+            Seminary on the campus of University of Dallas. Ordained in 1977, I
             finally decided to go to law school in Georgia: the Walter F. George
             School of Law at Mercer University, Macon, Georgia.
             <br />

@@ -21,7 +21,7 @@ export default function grandparentRights() {
           <div>
             <p className="body-copy-bold">GRANDPARENT RIGHTS</p>
             <p className="body-copy">
-              The State of Texas gives great deference to parents in allowing
+              The state of Texas gives great deference to parents in allowing
               them to raise and make decisions for their children without state
               or third party intervention or input. Unfortunately, this leaves
               little recourse under the law for grandparents who are seeking a
